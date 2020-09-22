@@ -41,5 +41,4 @@ router.get('/users/posts', passport.authenticate('jwt'), (req, res) => {
 })
 
 
-
 module.exports = router
