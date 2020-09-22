@@ -1,3 +1,5 @@
 module.exports = {
-  // send your models out here...
+  User: require('./User.js'),
+  Post: require('./Item.js'),
+  Comment: require('./Comment.js')
 }
