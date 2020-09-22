@@ -1,6 +1,6 @@
 const { model, Schema } = require('mongoose')
 
-const Post = new Schema({
+const Comment = new Schema({
   text: {
     type: String,
     required: true
@@ -9,14 +9,10 @@ const Post = new Schema({
     type: Number,
     required: true
   },
-  user: {
+  post: {
     type: Schema.Types.ObjectId,
-    ref: 'User'
-  },
-  comments: [{
-    type: Schema.Types.ObjectId,
-    ref: 'Comment'
-  }]
+    ref: 'Post'
+  }
 }, { timestamps: true })
 
-module.exports = model('Post', Post)
+module.exports = model('Comment', Comment)
