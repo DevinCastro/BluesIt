@@ -17,16 +17,20 @@ const Home = () => {
 
   const [postState, setPostState] = useState({
     text: '',
-    likes: 0
+    likes: 0,
+    posts: []
   })
 
   postState.handleInputChange = event => {
     setPostState({ ...postState, [event.target.name]: event.target.value })
   }
 
+
+  // function to hanlde a user making a post
   postState.handlePost = event => {
     event.preventDefault()
     console.log('hi')
+    toggle2()
 
     axios.post('/api/posts', {
       text: postState.text,
@@ -37,13 +41,28 @@ const Home = () => {
       }
     })
     .then(({data}) => {
-      console.log(data)
+
+        console.log(data)
+      setPostState({ ...postState, text: '' })
+    
     })
-    .catch(err => console.log(err))
+    .catch(err => {
+      console.log('toast "you need to log in"')
+      window.location = '/login'
+    })
 
 
   }
 
+
+  // populate posts on page, useEffect to GET posts
+  useEffect(() => {
+    axios.get('/api/posts')
+      .then(({ data }) => {
+        setPostState({ ...postState, posts: data })
+        console.log(data)
+      })
+  }, [])
 
 
 
@@ -93,15 +112,28 @@ const Home = () => {
         </ModalFooter>
       </Modal>
     </div></Col>
-        <Col xs="4">.col3</Col>
+        <Col xs="4">Search</Col>
         </Row>
         
         <Row>
           <h1>Posts</h1>
+          <div>
+
+              {
+                postState.posts.length > 0 ? (
+                  postState.posts.map(post => (
+                    <div key={post._id}>
+                      <h2>{post.user.username}</h2>
+                      <h3>{post.text}</h3>
+                    </div>
+                  ))
+                  ) : null
+                }
+                </div>
         </Row>
 
         </Col>
-        <Col>.col</Col>
+        <Col>Tab search Maybe?</Col>
         </Row>
         </Container>
     </>
