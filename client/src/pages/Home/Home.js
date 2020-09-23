@@ -1,15 +1,10 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
-<<<<<<< HEAD
-import { ToastConatiner, toast, ToastContainer } from 'react-toastify'
-import 'react-toastify/dist/ReactToastify.css'
-=======
 import { Button, Container, Row, Col } from 'reactstrap';
 import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
 import { Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import { Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 import Post from '../../components/Post'
->>>>>>> 880e7d2fa915194853ece1cddcdbbd4edeb82069
 
 const Home = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -121,9 +116,6 @@ const Home = () => {
   return (
     <>
       <h1>Home page</h1>
-<<<<<<< HEAD
-      <ToastContainer />
-=======
       <Container>
         <Row>
         <Col xs="9">
@@ -199,7 +191,6 @@ const Home = () => {
         <Col>Tab search Maybe?</Col>
         </Row>
         </Container>
->>>>>>> 880e7d2fa915194853ece1cddcdbbd4edeb82069
     </>
   )
 }
