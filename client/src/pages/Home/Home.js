@@ -4,6 +4,7 @@ import { Button, Container, Row, Col } from 'reactstrap';
 import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
 import { Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import { Form, FormGroup, Label, Input, FormText } from 'reactstrap';
+import Post from '../../components/Post'
 
 const Home = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -17,7 +18,7 @@ const Home = () => {
 
   const [postState, setPostState] = useState({
     text: '',
-    likes: 0,
+    title: '',
     posts: []
   })
 
@@ -34,6 +35,7 @@ const Home = () => {
 
     axios.post('/api/posts', {
       text: postState.text,
+      title: postState.title,
       likes: 0
     }, {
       headers: {
@@ -60,12 +62,51 @@ const Home = () => {
   useEffect(() => {
     axios.get('/api/posts')
       .then(({ data }) => {
-        setPostState({ ...postState, posts: data })
+        const posts = data.map(post => ({
+          ...post,
+          liked: false
+        }))
+        setPostState({ ...postState, posts })
         console.log(data)
       })
   }, [])
 
 
+
+ 
+
+  postState.handleLike = event => {
+    console.log(event.target.id)
+    let id = event.target.id
+    console.log(event.target.dataset.liked)
+    console.log(event.target.dataset.likes)
+    let likes = event.target.dataset.liked === "true" ? parseInt(event.target.dataset.likes) - 1 : parseInt(event.target.dataset.likes) + 1
+
+    axios.put(`/api/posts/${event.target.id}`, {
+      likes
+    }, {
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem('user')}`
+      }
+    })
+      .then(() => {
+        console.log('worked')
+        let posts = JSON.parse(JSON.stringify(postState.posts))
+        posts.forEach(post => {
+          if (post._id === id) {
+         
+            post.likes = likes
+            post.liked = !post.liked
+          }
+        })
+
+        setPostState({ ...postState, posts})
+
+      })
+      .catch(err => {
+        console.log(err)
+      })
+  }
 
 
 
@@ -97,7 +138,14 @@ const Home = () => {
         <ModalBody>
           <Form>
             <FormGroup>
-            <Label for="exampleText">Text Area</Label>
+            <Label for="exampleText">Title</Label>
+            <Input 
+            type="textarea" 
+            name="title"
+            value={postState.title}
+            onChange={postState.handleInputChange}
+            />
+            <Label for="exampleText">Post</Label>
             <Input 
             type="textarea" 
             name="text"
@@ -117,15 +165,21 @@ const Home = () => {
         </Row>
         
         <Row>
-          <h1>Posts</h1>
           <div>
 
               {
                 postState.posts.length > 0 ? (
                   postState.posts.map(post => (
                     <div key={post._id}>
-                      <h2>{post.user.username}</h2>
-                      <h3>{post.text}</h3>
+                     <Post 
+                    id={post._id}
+                    username={post.user.username}
+                    title={post.title}
+                    likes={post.likes}
+                    liked={post.liked}
+                    text={post.text}
+                    handleLike={postState.handleLike}
+                    />
                     </div>
                   ))
                   ) : null
