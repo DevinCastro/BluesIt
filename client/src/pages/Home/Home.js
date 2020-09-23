@@ -44,6 +44,7 @@ const Home = () => {
 
         console.log(data)
       setPostState({ ...postState, text: '' })
+      window.location = '/'
     
     })
     .catch(err => {
