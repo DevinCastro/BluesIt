@@ -32,7 +32,7 @@ return (
                 <NavLink><Link to="/">Home</Link></NavLink>
               </NavItem>
               <NavItem>
-                <NavLink><Link to="/login">Login</Link></NavLink>
+                <NavLink><Link to="/login">Login/Signup</Link></NavLink>
               </NavItem>
               
             </Nav>
