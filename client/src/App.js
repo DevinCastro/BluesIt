@@ -13,8 +13,10 @@ import {
   NavbarToggler,
   Nav,
   NavItem,
-  NavLink
+  NavLink,
+  NavbarBrand
 } from 'reactstrap'
+import logo from './logo.png'
 
 
 
@@ -24,15 +26,27 @@ const App = () => {
 return (
   <Router>
       <div>
-        <Navbar color="dark" light expand="md">
+        <Navbar  color="gainsboro" light expand="md">
           <NavbarToggler onClick={toggle} />
           <Collapse isOpen={isOpen} navbar>
             <Nav className="mr-auto" navbar>
-              <NavItem>
-                <NavLink><Link to="/">Home</Link></NavLink>
+  <NavbarBrand>
+  <img
+        src={logo}
+        width="50"
+        height="50"
+        className="d-inline-block align-top"
+        alt="React Bootstrap logo"
+        to="/"
+        
+      />
+  </NavbarBrand>
+              
+              <NavItem className='d-flex'>
+                <NavLink className='d-flex justify-content-center'><Link to="/">Home</Link></NavLink>
               </NavItem>
               <NavItem>
-                <NavLink><Link to="/login">Login/Signup</Link></NavLink>
+                <NavLink className='navlink'><Link to="/login">Login/Signup</Link></NavLink>
               </NavItem>
               
             </Nav>

@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import axios from 'axios'
 import { register } from '../../serviceWorker'
 // import API from '../../utils/API'
+import './Login.css'
+// import { MDBContainer, MDBRow, MDBCol, MDBBtn } from 'mdbreact'
 
 const Login = () => {
 
@@ -54,32 +56,32 @@ const Login = () => {
 
   return (
     <>
-      <h1>Sign Up Page</h1>
-      <form>
+      {/* <h1 className='center'>Sign Up Page</h1> */}
+      {/* <form className='form container-fluid center'>
         <p>
           <label htmlFor="name">Name</label>
-          <input type="text"
+          <input  className= 'input'type="text"
           name="name" 
           value={registerState.name}
           onChange={registerState.handleInputChange} />
         </p>
         <p>
           <label htmlFor="email">Email</label>
-          <input type="email"
+          <input className= 'input' type="email"
           name="email" 
           value={registerState.email}
           onChange={registerState.handleInputChange}/>
         </p>
         <p>
           <label htmlFor="username">Username</label>
-          <input type="text"
+          <input className= 'input' type="text"
           name="username" 
           value={registerState.username}
           onChange={registerState.handleInputChange}/>
         </p>
         <p>
           <label htmlFor="password">Password</label>
-          <input type="password"
+          <input className= 'input' type="password"
           name="password" 
           value={registerState.password}
           onChange={registerState.handleInputChange}/>
@@ -92,14 +94,14 @@ const Login = () => {
       <form>
         <p>
           <label htmlFor="lUsername">Username</label>
-          <input type="text"
+          <input  className= 'input' type="text"
           name="lUsername" 
           value={registerState.lUsername}
           onChange={registerState.handleInputChange} />
         </p>
         <p>
           <label htmlFor="lPassword">Password</label>
-          <input type="password"
+          <input  className= 'input' type="password"
           name="lPassword" 
           value={registerState.lPassword}
           onChange={registerState.handleInputChange} />
@@ -107,7 +109,34 @@ const Login = () => {
         <p>
           <button onClick={registerState.handleLogin}>Login</button>
         </p>
-      </form>
+      </form> */}
+<div className="padding">
+      <form className='form container-fluid center padding'>
+                <h3>Sign In</h3>
+
+                <div className="form-group">
+                    <label>Email address</label>
+                    <input type="email" className="form-control input" placeholder="Enter email" />
+                </div>
+
+                <div className="form-group">
+                    <label>Password</label>
+                    <input type="password" className="form-control" placeholder="Enter password" />
+                </div>
+
+                <div className="form-group">
+                    <div className="custom-control custom-checkbox">
+                        <input type="checkbox" className="custom-control-input input" id="customCheck1" />
+                        <label className="custom-control-label" htmlFor="customCheck1">Remember me</label>
+                    </div>
+                </div>
+
+                <button type="submit" className="btn btn-primary btn-block">Submit</button>
+                <p className="forgot-password text-right">
+                    Forgot <a href="#">password?</a>
+                </p>
+            </form>
+            </div>
     </>
   )
 }

@@ -69,9 +69,9 @@ const Post = props => {
   return (
     <>
       <div>
-        <Card className="w-full">
+        <Card className="w-full card">
           {/* <CardImg top width="100%" src="/assets/318x180.svg" alt="Card image cap" /> */}
-          <CardBody>
+          <CardBody className='cardposts'>
             <CardTitle>Post by: {props.username}</CardTitle>
             <CardSubtitle>Likes: {props.likes}</CardSubtitle>
             <CardSubtitle>Title: {props.title}</CardSubtitle>

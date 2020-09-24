@@ -5,6 +5,7 @@ import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap
 import { Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import { Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 import Post from '../../components/Post'
+import './Home.css'
 
 const Home = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -115,7 +116,8 @@ const Home = () => {
 
   return (
     <>
-      <h1>Home page</h1>
+      <h1 className='center font'>BluesIt</h1>
+      <hr></hr>
       <Container>
         <Row>
         <Col xs="9">
@@ -188,7 +190,7 @@ const Home = () => {
         </Row>
 
         </Col>
-        <Col>Tab search Maybe?</Col>
+        <Col className='line'>Tab search Maybe?</Col>
         </Row>
         </Container>
     </>
