@@ -42,7 +42,7 @@ return (
         <Switch>
           <Route exact path="/" component={Home} />
           <Route path="/login" component={Login} />
-          <Route path="/thread" component={Thread} />
+          <Route path="/thread/:id" component={Thread} />
         </Switch>
       </div>
     </Router>

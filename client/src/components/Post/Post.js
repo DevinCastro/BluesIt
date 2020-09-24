@@ -20,10 +20,6 @@ const Post = props => {
     id: ''
   })
 
-  idState.handleId = event => {
-    event.preventDefault()
-    console.log(event.target.id)
-  }
 
   return (
     <>
@@ -36,7 +32,7 @@ const Post = props => {
             <CardSubtitle>Title: {props.title}</CardSubtitle>
             <CardText>{props.text}</CardText>
             {props.liked ? <Button id={props.id} data-likes={props.likes} data-liked={props.liked} onClick={props.handleLike}>Unlike</Button> : <Button id={props.id} data-likes={props.likes} data-liked={props.liked} onClick={props.handleLike}>Like</Button>}
-            <Button id={props.id} onClick={idState.handleId}>View Thread</Button>
+            <Link to={`/thread/${props.id}`}><Button id={props.id}>View Thread</Button></Link>
           </CardBody>
         </Card>
       </div>
