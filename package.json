@@ -24,12 +24,7 @@
     "passport": "^0.4.1",
     "passport-jwt": "^4.0.0",
     "passport-local": "^1.0.0",
-<<<<<<< HEAD
-    "passport-local-mongoose": "^6.0.1",
-    "reactstrap": "^8.6.0"
-=======
     "passport-local-mongoose": "^6.0.1"
->>>>>>> ccd497b064c908eb3731174588f99dd32197f53b
   },
   "devDependencies": {
     "concurrently": "^5.3.0"
