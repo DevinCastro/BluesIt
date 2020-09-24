@@ -22,7 +22,6 @@ const Threadpost = props => {
 
     const [commentState, setCommentState] = useState({
         text: '',
-        username: '',
         comments: []
     })
 
@@ -63,9 +62,9 @@ const Threadpost = props => {
     useEffect(() => {
         axios.get(`/api/posts/${id}`)
             .then(({ data }) => {
-                let username = data.user.username
+                
                 console.log(data)
-                setCommentState({ ...commentState, comments: data.comments, username})
+                setCommentState({ ...commentState, comments: data.comments})
                 
             })
             .catch(err => console.log(err))
@@ -123,7 +122,7 @@ const Threadpost = props => {
                                 {/* <Link to="/thread"> */}
                                 <Comment
                                     id={comment._id}
-                                    username={commentState.username}           
+                                    username={comment.user.username}           
                                     text={comment.text}
                                 />
                                 {/* </Link> */}

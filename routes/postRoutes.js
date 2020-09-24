@@ -13,7 +13,13 @@ router.get('/posts', (req, res) => {
 router.get('/posts/:id', (req, res) => {
   Post.findById(req.params.id)
     .populate('user')
-    .populate('comments')
+    .populate({
+      path: "comments",
+      populate: {
+        path: 'user',
+        model: "User"
+      }
+    })
     .then(posts => res.json(posts))
     .catch(err => console.log(err))
 })
