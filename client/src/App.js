@@ -7,6 +7,7 @@ import {
 } from 'react-router-dom'
 import Home from './pages/Home'
 import Login from './pages/Login'
+import Thread from './pages/Thread'
 import {
   Collapse,
   Navbar,
@@ -41,7 +42,7 @@ return (
         <Switch>
           <Route exact path="/" component={Home} />
           <Route path="/login" component={Login} />
-          
+          <Route path="/thread" component={Thread} />
         </Switch>
       </div>
     </Router>

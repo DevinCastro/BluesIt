@@ -4,6 +4,13 @@ import { Button, Container, Row, Col } from 'reactstrap';
 import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
 import { Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import { Form, FormGroup, Label, Input, FormText } from 'reactstrap';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from 'react-router-dom'
+import Thread from '../Thread'
 import Post from '../../components/Post'
 
 const Home = () => {
@@ -26,6 +33,7 @@ const Home = () => {
     setPostState({ ...postState, [event.target.name]: event.target.value })
   }
 
+  
 
   // function to hanlde a user making a post
   postState.handlePost = event => {
@@ -44,7 +52,7 @@ const Home = () => {
     })
     .then(({data}) => {
 
-        console.log(data)
+      console.log(data)
       setPostState({ ...postState, text: '' })
       window.location = '/'
     
@@ -171,15 +179,17 @@ const Home = () => {
                 postState.posts.length > 0 ? (
                   postState.posts.map(post => (
                     <div key={post._id}>
-                     <Post 
-                    id={post._id}
-                    username={post.user.username}
-                    title={post.title}
-                    likes={post.likes}
-                    liked={post.liked}
-                    text={post.text}
-                    handleLike={postState.handleLike}
-                    />
+                    {/* <Link to="/thread"> */}
+                      <Post 
+                      id={post._id}
+                      username={post.user.username}
+                      title={post.title}
+                      likes={post.likes}
+                      liked={post.liked}
+                      text={post.text}
+                      handleLike={postState.handleLike}
+                      />
+                    {/* </Link> */}
                     </div>
                   ))
                   ) : null

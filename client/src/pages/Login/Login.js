@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import axios from 'axios'
-import { ToastConatiner, toast, ToastContainer } from 'react-toastify'
-import 'react-toastify/dist/ReactToastify.css'
+// import { ToastConatiner, toast, ToastContainer } from 'react-toastify'
+// import 'react-toastify/dist/ReactToastify.css'
 // import API from '../../utils/API'
 
 const Login = () => {
@@ -26,15 +26,15 @@ const Login = () => {
     .then(() => {
       // console.log('Registered!')
       setRegisterState({ ...registerState, name: '', email: '', username: '', password: ''})
-      toast.success('Account Created!', {
-        position: "bottom-right",
-        autoClose: 3000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        });
+      // toast.success('Account Created!', {
+      //   position: "bottom-right",
+      //   autoClose: 3000,
+      //   hideProgressBar: false,
+      //   closeOnClick: true,
+      //   pauseOnHover: true,
+      //   draggable: true,
+      //   progress: undefined,
+      //   });
     })
     .catch(err => console.log(err))
   }
@@ -58,15 +58,15 @@ const Login = () => {
         // console.log('it works!')
         // toast('Yes')
       } else {
-        toast.error('Incorrect Credentials', {
-          position: "bottom-right",
-          autoClose: 3000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          });
+        // toast.error('Incorrect Credentials', {
+        //   position: "bottom-right",
+        //   autoClose: 3000,
+        //   hideProgressBar: false,
+        //   closeOnClick: true,
+        //   pauseOnHover: true,
+        //   draggable: true,
+        //   progress: undefined,
+        //   });
       }
     })
   }
@@ -105,7 +105,7 @@ const Login = () => {
         </p>
         <p>
           <button onClick={registerState.handleRegister}>Submit</button>
-          <ToastContainer />
+          {/* <ToastContainer /> */}
         </p>
       </form>
 

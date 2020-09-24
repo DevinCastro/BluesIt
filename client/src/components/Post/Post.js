@@ -3,68 +3,27 @@ import {
   Card, CardImg, CardText, CardBody,
   CardTitle, CardSubtitle, Button
 } from 'reactstrap';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from 'react-router-dom'
+import Thread from '../../pages/Thread'
 import axios from 'axios'
+import { PromiseProvider } from 'mongoose';
 
 
 const Post = props => {
 
-  // const [likeState, setLikeState] = useState({ })
+  const [idState, setIdState] = useState({
+    id: ''
+  })
 
-  // likeState.handleLike = event => {
-  //   console.log(event.target.id)
-
-  //   let likes = parseInt(event.target.dataset.likes) + (props.liked ? -1 : 1) 
-   
-  //   axios.put(`/api/posts/${event.target.id}`, {
-  //     likes: parseInt(event.target.dataset.likes) + 1
-  //   }, {
-  //     headers: {
-  //       Authorization: `Bearer ${localStorage.getItem('user')}`
-  //     }
-  //   })
-  //   .then(() => {
-  //     console.log('worked')
-  //     window.location = '/'
-  //   })
-  //   .catch(err => {
-  //     console.log(err)
-  //     alert('You need to Log In')
-  //   })
-  // }
-
-  // function to hanlde a user making a post
-  // postState.handlePost = event => {
-  //   event.preventDefault()
-  //   console.log('hi')
-  //   toggle2()
-
-  //   axios.post('/api/posts', {
-  //     text: postState.text,
-  //     title: postState.title,
-  //     likes: 0
-  //   }, {
-  //     headers: {
-  //       Authorization: `Bearer ${localStorage.getItem('user')}`
-  //     }
-  //   })
-  //     .then(({ data }) => {
-
-  //       console.log(data)
-  //       setPostState({ ...postState, text: '' })
-  //       window.location = '/'
-
-  //     })
-  //     .catch(err => {
-  //       console.log('toast "you need to log in"')
-  //       window.location = '/login'
-  //     })
-
-
-  // }
-
-
-
-
+  idState.handleId = event => {
+    event.preventDefault()
+    console.log(event.target.id)
+  }
 
   return (
     <>
@@ -77,6 +36,7 @@ const Post = props => {
             <CardSubtitle>Title: {props.title}</CardSubtitle>
             <CardText>{props.text}</CardText>
             {props.liked ? <Button id={props.id} data-likes={props.likes} data-liked={props.liked} onClick={props.handleLike}>Unlike</Button> : <Button id={props.id} data-likes={props.likes} data-liked={props.liked} onClick={props.handleLike}>Like</Button>}
+            <Button id={props.id} onClick={idState.handleId}>View Thread</Button>
           </CardBody>
         </Card>
       </div>
