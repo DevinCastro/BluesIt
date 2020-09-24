@@ -29,6 +29,7 @@ const Thread = props => {
     return (
         <>
             <Threadpost 
+            id={threadState.post._id} 
             username={threadState.username}
             title={threadState.post.title}
             likes={threadState.post.likes}
