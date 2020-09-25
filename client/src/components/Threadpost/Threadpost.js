@@ -125,6 +125,7 @@ const Threadpost = props => {
                                     id={comment._id}
                                     username={comment.user.username}           
                                     text={comment.text}
+                                    date={comment.createdAt}
                                 />
                                 {/* </Link> */}
                             </div>
