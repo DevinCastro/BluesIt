@@ -188,6 +188,7 @@ const Home = () => {
                       liked={post.liked}
                       text={post.text}
                       handleLike={postState.handleLike}
+                      commentNum={post.comments.length}
                       />
                     {/* </Link> */}
                     </div>

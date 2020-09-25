@@ -31,6 +31,8 @@ const Post = props => {
             <CardSubtitle>Likes: {props.likes}</CardSubtitle>
             <CardSubtitle>Title: {props.title}</CardSubtitle>
             <CardText>{props.text}</CardText>
+            <CardText>{props.commentNum} comments</CardText>
+
             {props.liked ? <Button id={props.id} data-likes={props.likes} data-liked={props.liked} onClick={props.handleLike}>Unlike</Button> : <Button id={props.id} data-likes={props.likes} data-liked={props.liked} onClick={props.handleLike}>Like</Button>}
             <Link to={`/thread/${props.id}`}><Button id={props.id}>View Thread</Button></Link>
           </CardBody>
