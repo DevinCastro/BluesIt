@@ -37,6 +37,7 @@ const Thread = props => {
             likes={threadState.post.likes}
             text={threadState.post.text}
             commentNum={threadState.commentNum}
+            postLink={threadState.post.link}
             />
         </>
     )

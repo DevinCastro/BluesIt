@@ -22,6 +22,7 @@ const Threadpost = props => {
 
     const [commentState, setCommentState] = useState({
         text: '',
+        link: '',
         comments: []
     })
 
@@ -33,7 +34,8 @@ const Threadpost = props => {
         event.preventDefault()
         axios.post('/api/comments', {
             text: commentState.text,
-            post: event.target.id
+            post: event.target.id,
+            link: commentState.link
         }, {
             headers: {
                 Authorization: `Bearer ${localStorage.getItem('user')}`
@@ -42,7 +44,7 @@ const Threadpost = props => {
         )
             .then(({ data }) => {
                 console.log(data)
-                setCommentState({ ...commentState, text: '' })
+                setCommentState({ ...commentState, text: '', link: '' })
                 window.location.reload()
             })
             .catch(err => console.log(err))
@@ -84,6 +86,7 @@ const Threadpost = props => {
                         <CardSubtitle>Likes: {props.likes}</CardSubtitle>
                         <CardSubtitle>Title: {props.title}</CardSubtitle>
                         <CardText>{props.text}</CardText>
+                        <CardText><a href={props.postLink}>{props.postLink}</a></CardText>
                         <CardText>{props.commentNum} Comments</CardText>
                     </CardBody>
 
@@ -99,6 +102,13 @@ const Threadpost = props => {
                                     type="textarea"
                                     name="text"
                                     value={commentState.text}
+                                    onChange={commentState.handleInputChange}
+                                />
+                                <Label for="exampleText">Link (Optional)</Label>
+                                <Input
+                                    type="textarea"
+                                    name="link"
+                                    value={commentState.link}
                                     onChange={commentState.handleInputChange}
                                 />
                             </FormGroup>
@@ -126,6 +136,7 @@ const Threadpost = props => {
                                     username={comment.user.username}           
                                     text={comment.text}
                                     date={comment.createdAt}
+                                    link={comment.link}
                                 />
                                 {/* </Link> */}
                             </div>

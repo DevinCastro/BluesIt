@@ -32,6 +32,7 @@ const Post = props => {
             <CardSubtitle>Likes: {props.likes}</CardSubtitle>
             <CardSubtitle>Title: {props.title}</CardSubtitle>
             <CardText>{props.text}</CardText>
+            <CardText><a target='_blank' href={props.link}>{props.link}</a></CardText>
             <CardText>{props.commentNum} comments</CardText>
             <CardText>Posted on: <Moment format="MM/DD/YY h:mm a">{props.date}</Moment> </CardText>
 

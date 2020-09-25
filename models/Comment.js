@@ -9,6 +9,10 @@ const Comment = new Schema({
   //   type: Number,
   //   required: true
   // },
+  link: {
+    type: String,
+    required: false
+  },
   user: {
     type: Schema.Types.ObjectId,
     ref: 'User'

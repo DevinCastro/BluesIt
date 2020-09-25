@@ -30,6 +30,7 @@ const Home = () => {
   const [postState, setPostState] = useState({
     text: '',
     title: '',
+    link: '',
     posts: []
   })
 
@@ -48,6 +49,7 @@ const Home = () => {
     axios.post('/api/posts', {
       text: postState.text,
       title: postState.title,
+      link: postState.link,
       likes: 0
     }, {
       headers: {
@@ -185,6 +187,13 @@ const Home = () => {
             value={postState.text}
             onChange={postState.handleInputChange}
             />
+            <Label for="exampleText">Link (Optional)</Label>
+            <Input 
+            type="textarea" 
+            name="link"
+            value={postState.link}
+            onChange={postState.handleInputChange}
+            />
             </FormGroup>
             <Button color="primary" onClick={postState.handlePost}>Post</Button>
           </Form>
@@ -215,6 +224,7 @@ const Home = () => {
                       handleLike={postState.handleLike}
                       commentNum={post.comments.length}
                       date={post.createdAt}
+                      link={post.link}
                       />
                     {/* </Link> */}
                     </div>
