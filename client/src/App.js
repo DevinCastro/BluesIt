@@ -19,7 +19,8 @@ import {
   NavbarBrand
 } from 'reactstrap'
 import logo from './logo.png'
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const App = () => {
@@ -28,7 +29,7 @@ const App = () => {
 
   const logOut = () => {
     localStorage.removeItem('user')
-    console.log('logged out')
+   window.location = '/login'
   }
 
 
@@ -83,7 +84,7 @@ return (
           <Route path="/thread/:id" component={Thread} />
         </Switch>
       </div>
-  
+      <ToastContainer limit={1}/>
     </Router>
 
 

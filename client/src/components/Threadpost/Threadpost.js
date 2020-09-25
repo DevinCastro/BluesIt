@@ -91,7 +91,10 @@ const Threadpost = props => {
                     </CardBody>
 
                 </Card>
+                {localStorage.getItem('user')  ? 
                 <Button color="danger" onClick={toggle2}>Add Comment</Button>
+                : null
+}
                 <Modal isOpen={modal} toggle={toggle2}>
                     <ModalHeader toggle={toggle2}>Write a Comment</ModalHeader>
                     <ModalBody>
