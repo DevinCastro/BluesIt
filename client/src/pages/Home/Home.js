@@ -13,6 +13,11 @@ import {
 import Thread from '../Thread'
 import Post from '../../components/Post'
 
+
+
+
+
+
 const Home = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
@@ -115,6 +120,8 @@ const Home = () => {
         console.log(err)
       })
   }
+
+
 
 
 
