@@ -12,9 +12,8 @@ import {
 } from 'react-router-dom'
 import Thread from '../Thread'
 import Post from '../../components/Post'
+import Moment from 'react-moment'
 import './Home.css'
-
-
 
 
 
@@ -32,6 +31,7 @@ const Home = () => {
   const [postState, setPostState] = useState({
     text: '',
     title: '',
+    link: '',
     posts: []
   })
 
@@ -50,6 +50,7 @@ const Home = () => {
     axios.post('/api/posts', {
       text: postState.text,
       title: postState.title,
+      link: postState.link,
       likes: 0
     }, {
       headers: {
@@ -80,6 +81,7 @@ const Home = () => {
           ...post,
           liked: false
         }))
+        posts.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
         setPostState({ ...postState, posts })
         console.log(data)
       })
@@ -123,7 +125,24 @@ const Home = () => {
   }
 
 
+  postState.handleLikeSort = () => {
+    const posts = postState.posts.sort((a,b) => b.likes - a.likes)
+    
+    setPostState({ ...postState, posts})
+  }
 
+
+  postState.handleRecentSort = () => {
+    const posts = postState.posts.sort((a,b) => new Date(b.createdAt) - new Date(a.createdAt))
+    
+    setPostState({ ...postState, posts})
+  }
+   
+  postState.handleCommentSort = () => {
+    const posts = postState.posts.sort((a,b) => b.comments.length - a.comments.length)
+    
+    setPostState({ ...postState, posts})
+  }
 
 
 
@@ -144,8 +163,9 @@ const Home = () => {
         Sort By
         </DropdownToggle>
       <DropdownMenu>
-        <DropdownItem><Button>Most Liked</Button></DropdownItem>
-        <DropdownItem><Button>Most Recent</Button></DropdownItem>
+        <DropdownItem><Button onClick={postState.handleLikeSort}>Most Liked</Button></DropdownItem>
+        <DropdownItem><Button onClick={postState.handleRecentSort}>Most Recent</Button></DropdownItem>
+        <DropdownItem><Button onClick={postState.handleCommentSort}>Most Comments</Button></DropdownItem>
         </DropdownMenu>
     </Dropdown>
   </Col>
@@ -168,6 +188,13 @@ const Home = () => {
             type="textarea" 
             name="text"
             value={postState.text}
+            onChange={postState.handleInputChange}
+            />
+            <Label for="exampleText">Link (Optional)</Label>
+            <Input 
+            type="textarea" 
+            name="link"
+            value={postState.link}
             onChange={postState.handleInputChange}
             />
             </FormGroup>
@@ -199,6 +226,8 @@ const Home = () => {
                       text={post.text}
                       handleLike={postState.handleLike}
                       commentNum={post.comments.length}
+                      date={post.createdAt}
+                      link={post.link}
                       />
                     {/* </Link> */}
                     </div>

@@ -30,6 +30,7 @@ router.post('/posts', passport.authenticate('jwt'), (req, res) => {
     text: req.body.text,
     title: req.body.title,
     likes: req.body.likes,
+    link: req.body.link,
     user: req.user._id
   })
     .then(post => {

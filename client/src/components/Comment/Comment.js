@@ -6,7 +6,7 @@ import {
 
 import axios from 'axios'
 import { PromiseProvider } from 'mongoose';
-
+import Moment from 'react-moment'
 
 const Comment = props => {
 
@@ -18,6 +18,8 @@ const Comment = props => {
           <CardBody>
             <CardTitle>Comment by: {props.username}</CardTitle>
             <CardText>{props.text}</CardText>
+            <CardText><a href={props.link}>{props.link}</a></CardText>
+            <CardText>Posted on <Moment format="MM/DD/YY h:mm a">{props.date}</Moment></CardText>
           </CardBody>
         </Card>
       </div>
