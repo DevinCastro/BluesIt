@@ -69,15 +69,11 @@ return (
               <NavItem>
                 <NavLink><Link to="/login">Login/Signup</Link></NavLink>
               </NavItem>
-<<<<<<< HEAD
-        
-=======
               <NavItem>
                 <Button onClick={logOut}>Logout</Button>
               </NavItem>
               
 
->>>>>>> 36939ecf43cf749836fce7e59fc87b1e5265da92
             </Nav>
           </Collapse>
         </Navbar>
