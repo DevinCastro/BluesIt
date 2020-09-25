@@ -15,7 +15,7 @@ router.get('/comments', (req, res) => {
 router.post('/comments', passport.authenticate('jwt'), (req, res) => {
   Comment.create({
     text: req.body.text,
-    likes: req.body.likes,
+    // likes: req.body.likes,
     post: req.body.post,
     user: req.user._id
   })

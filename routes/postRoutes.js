@@ -10,6 +10,20 @@ router.get('/posts', (req, res) => {
     .catch(err => console.log(err))
 })
 
+router.get('/posts/:id', (req, res) => {
+  Post.findById(req.params.id)
+    .populate('user')
+    .populate({
+      path: "comments",
+      populate: {
+        path: 'user',
+        model: "User"
+      }
+    })
+    .then(posts => res.json(posts))
+    .catch(err => console.log(err))
+})
+
 // POST one Post
 router.post('/posts', passport.authenticate('jwt'), (req, res) => {
   Post.create({

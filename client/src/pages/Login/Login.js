@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import axios from 'axios'
-import { register } from '../../serviceWorker'
+// import { ToastConatiner, toast, ToastContainer } from 'react-toastify'
+// import 'react-toastify/dist/ReactToastify.css'
 // import API from '../../utils/API'
 import './Login.css'
 // import { MDBContainer, MDBRow, MDBCol, MDBBtn } from 'mdbreact'
@@ -27,6 +28,15 @@ const Login = () => {
     .then(() => {
       // console.log('Registered!')
       setRegisterState({ ...registerState, name: '', email: '', username: '', password: ''})
+      // toast.success('Account Created!', {
+      //   position: "bottom-right",
+      //   autoClose: 3000,
+      //   hideProgressBar: false,
+      //   closeOnClick: true,
+      //   pauseOnHover: true,
+      //   draggable: true,
+      //   progress: undefined,
+      //   });
     })
     .catch(err => console.log(err))
   }
@@ -46,10 +56,19 @@ const Login = () => {
     .then(({ data: token }) => {
       if (token) {
         localStorage.setItem('user', token)
-        console.log('login success')
         window.location = '/'
+        // console.log('it works!')
+        // toast('Yes')
       } else {
-        console.log('incorrect credentials')
+        // toast.error('Incorrect Credentials', {
+        //   position: "bottom-right",
+        //   autoClose: 3000,
+        //   hideProgressBar: false,
+        //   closeOnClick: true,
+        //   pauseOnHover: true,
+        //   draggable: true,
+        //   progress: undefined,
+        //   });
       }
     })
   }
@@ -88,9 +107,12 @@ const Login = () => {
         </p>
         <p>
           <button onClick={registerState.handleRegister}>Submit</button>
-        </p>
-      </form>
+          {/* <ToastContainer /> */}
+        {/* </p>
+      </form> */}
+
       <h1>Login</h1>
+
       <form>
         <p>
           <label htmlFor="lUsername">Username</label>
@@ -109,7 +131,7 @@ const Login = () => {
         <p>
           <button onClick={registerState.handleLogin}>Login</button>
         </p>
-      </form> */}
+      </form> 
 <div className="padding">
       <form className='form container-fluid center padding'>
                 <h3>Sign In</h3>

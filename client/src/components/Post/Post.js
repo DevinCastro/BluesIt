@@ -3,11 +3,24 @@ import {
   Card, CardImg, CardText, CardBody,
   CardTitle, CardSubtitle, Button
 } from 'reactstrap';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from 'react-router-dom'
+import Thread from '../../pages/Thread'
 import axios from 'axios'
-import './Post.css'
+import { PromiseProvider } from 'mongoose';
 
 
 const Post = props => {
+
+  const [idState, setIdState] = useState({
+    id: ''
+  })
+
+
   return (
     <>
       <div className="post-body">
@@ -19,6 +32,7 @@ const Post = props => {
             <CardSubtitle className="name">Title: {props.title}</CardSubtitle>
             <CardText className="post">{props.text}</CardText>
             {props.liked ? <Button id={props.id} data-likes={props.likes} data-liked={props.liked} onClick={props.handleLike}>Unlike</Button> : <Button id={props.id} data-likes={props.likes} data-liked={props.liked} onClick={props.handleLike}>Like</Button>}
+            <Link to={`/thread/${props.id}`}><Button id={props.id}>View Thread</Button></Link>
           </CardBody>
         </Card>
       </div>
