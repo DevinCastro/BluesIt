@@ -17,7 +17,6 @@ import Post from '../../components/Post'
 
 
 
-
 const Home = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
@@ -79,6 +78,7 @@ const Home = () => {
           ...post,
           liked: false
         }))
+        posts.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
         setPostState({ ...postState, posts })
         console.log(data)
       })
@@ -122,7 +122,24 @@ const Home = () => {
   }
 
 
+  postState.handleLikeSort = () => {
+    const posts = postState.posts.sort((a,b) => b.likes - a.likes)
+    
+    setPostState({ ...postState, posts})
+  }
 
+
+  postState.handleRecentSort = () => {
+    const posts = postState.posts.sort((a,b) => new Date(b.createdAt) - new Date(a.createdAt))
+    
+    setPostState({ ...postState, posts})
+  }
+   
+  postState.handleCommentSort = () => {
+    const posts = postState.posts.sort((a,b) => b.comments.length - a.comments.length)
+    
+    setPostState({ ...postState, posts})
+  }
 
 
 
@@ -141,8 +158,9 @@ const Home = () => {
         Sort By
         </DropdownToggle>
       <DropdownMenu>
-        <DropdownItem><Button>Most Liked</Button></DropdownItem>
-        <DropdownItem><Button>Most Recent</Button></DropdownItem>
+        <DropdownItem><Button onClick={postState.handleLikeSort}>Most Liked</Button></DropdownItem>
+        <DropdownItem><Button onClick={postState.handleRecentSort}>Most Recent</Button></DropdownItem>
+        <DropdownItem><Button onClick={postState.handleCommentSort}>Most Comments</Button></DropdownItem>
         </DropdownMenu>
     </Dropdown>
   </Col>
