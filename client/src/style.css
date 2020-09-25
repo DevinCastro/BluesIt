@@ -1,5 +1,8 @@
 * {
-    background-color: gainsboro
+    background-color: gainsboro;
+    
+        font-family: 'Montserrat', sans-serif;
+
 }
 
 
@@ -7,13 +10,23 @@
 
 } */
 
+/* .center1 {
+    text-align: center;
+    display: block;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+  } */
+
 .center {
     text-align: center
 }
 
-.line {
-    border-left: 1px black
+.font {
+    font-family: 'Montserrat', sans-serif;
 }
+
+
 
 /* .navlink {
   ;

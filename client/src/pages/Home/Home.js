@@ -116,9 +116,10 @@ const Home = () => {
 
   return (
     <>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet"></link>
       <h1 className='center font'>BluesIt</h1>
       <hr></hr>
-      <Container>
+      <div>
         <Row>
         <Col xs="9">
 
@@ -190,9 +191,9 @@ const Home = () => {
         </Row>
 
         </Col>
-        <Col className='line'>Tab search Maybe?</Col>
+        <Col>Tab search Maybe?</Col>
         </Row>
-        </Container>
+        </div>
     </>
   )
 }
