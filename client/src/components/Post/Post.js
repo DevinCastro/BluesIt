@@ -29,14 +29,23 @@ const Post = props => {
           {/* <CardImg top width="100%" src="/assets/318x180.svg" alt="Card image cap" /> */}
           <CardBody>
             <CardTitle>Post by: {props.username}</CardTitle>
-            <CardSubtitle>Likes: {props.likes}</CardSubtitle>
+            <CardSubtitle>👍 {props.likes}</CardSubtitle>
             <CardSubtitle>Title: {props.title}</CardSubtitle>
             <CardText>{props.text}</CardText>
             <CardText><a target='_blank' href={props.link}>{props.link}</a></CardText>
             <CardText>{props.commentNum} comments</CardText>
             <CardText>Posted on: <Moment format="MM/DD/YY h:mm a">{props.date}</Moment> </CardText>
 
-            {props.liked ? <Button id={props.id} data-likes={props.likes} data-liked={props.liked} onClick={props.handleLike}>Unlike</Button> : <Button id={props.id} data-likes={props.likes} data-liked={props.liked} onClick={props.handleLike}>Like</Button>}
+          { localStorage.getItem('user') ?
+
+            
+              (props.liked ? <Button id={props.id} data-likes={props.likes} data-liked={props.liked} onClick={props.handleLike}>👎︎</Button> : <Button id={props.id} data-likes={props.likes} data-liked={props.liked} onClick={props.handleLike}>👍</Button>)
+
+            : null 
+
+          }
+
+
             <Link to={`/thread/${props.id}`}><Button id={props.id}>View Thread</Button></Link>
           </CardBody>
         </Card>
