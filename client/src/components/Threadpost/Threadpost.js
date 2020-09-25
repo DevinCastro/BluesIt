@@ -84,6 +84,7 @@ const Threadpost = props => {
                         <CardSubtitle>Likes: {props.likes}</CardSubtitle>
                         <CardSubtitle>Title: {props.title}</CardSubtitle>
                         <CardText>{props.text}</CardText>
+                        <CardText>{props.commentNum} Comments</CardText>
                     </CardBody>
 
                 </Card>

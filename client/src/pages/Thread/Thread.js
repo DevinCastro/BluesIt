@@ -9,7 +9,8 @@ const Thread = props => {
 
     const [threadState, setThreadState] = useState({
         post: {},
-        username: ''
+        username: '',
+        commentNum: ''
     })
 
     let { id } = useParams()
@@ -19,8 +20,9 @@ const Thread = props => {
         .then(({ data }) => {
             //continuously running, fix later
             let username = data.user.username
+            let commentNum = data.comments.length
             console.log(data)
-            setThreadState({ ...threadState, post: data, username})
+            setThreadState({ ...threadState, post: data, username, commentNum })
         })
         .catch(err => console.log(err))
     },[])
@@ -34,6 +36,7 @@ const Thread = props => {
             title={threadState.post.title}
             likes={threadState.post.likes}
             text={threadState.post.text}
+            commentNum={threadState.commentNum}
             />
         </>
     )

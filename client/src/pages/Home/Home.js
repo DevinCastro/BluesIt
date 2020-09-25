@@ -14,6 +14,11 @@ import Thread from '../Thread'
 import Post from '../../components/Post'
 import './Home.css'
 
+
+
+
+
+
 const Home = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
@@ -122,6 +127,8 @@ const Home = () => {
 
 
 
+
+
   return (
     <>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet"></link>
@@ -191,6 +198,7 @@ const Home = () => {
                       liked={post.liked}
                       text={post.text}
                       handleLike={postState.handleLike}
+                      commentNum={post.comments.length}
                       />
                     {/* </Link> */}
                     </div>

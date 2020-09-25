@@ -75,6 +75,46 @@ const Login = () => {
 
   return (
     <>
+
+
+<h1>Sign Up Page</h1>
+      <form>
+        <p>
+          <label htmlFor="name">Name</label>
+          <input type="text"
+          name="name" 
+          value={registerState.name}
+          onChange={registerState.handleInputChange} />
+        </p>
+        <p>
+          <label htmlFor="email">Email</label>
+          <input type="email"
+          name="email" 
+          value={registerState.email}
+          onChange={registerState.handleInputChange}/>
+        </p>
+        <p>
+          <label htmlFor="username">Username</label>
+          <input type="text"
+          name="username" 
+          value={registerState.username}
+          onChange={registerState.handleInputChange}/>
+        </p>
+        <p>
+          <label htmlFor="password">Password</label>
+          <input type="password"
+          name="password" 
+          value={registerState.password}
+          onChange={registerState.handleInputChange}/>
+        </p>
+        <p>
+          <button onClick={registerState.handleRegister}>Submit</button>
+          {/* <ToastContainer /> */}
+        </p>
+      </form>
+
+      
+
       {/* <h1 className='center'>Sign Up Page</h1> */}
       {/* <form className='form container-fluid center'>
         <p>
@@ -111,6 +151,8 @@ const Login = () => {
         {/* </p>
       </form> */}
 
+    
+
       <h1>Login</h1>
 
       <form>
@@ -132,13 +174,15 @@ const Login = () => {
           <button onClick={registerState.handleLogin}>Login</button>
         </p>
       </form> 
+
+      
 <div className="padding">
       <form className='form container-fluid center padding'>
                 <h3>Sign In</h3>
 
                 <div className="form-group">
-                    <label>Email address</label>
-                    <input type="email" className="form-control input" placeholder="Enter email" />
+                    <label>Username</label>
+                    <input type="username" className="form-control input" placeholder="Enter username" />
                 </div>
 
                 <div className="form-group">
@@ -158,7 +202,9 @@ const Login = () => {
                     Forgot <a href="#">password?</a>
                 </p>
             </form>
+        
             </div>
+           
     </>
   )
 }

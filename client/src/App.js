@@ -9,6 +9,7 @@ import Home from './pages/Home'
 import Login from './pages/Login'
 import Thread from './pages/Thread'
 import {
+  Button,
   Collapse,
   Navbar,
   NavbarToggler,
@@ -24,6 +25,13 @@ import logo from './logo.png'
 const App = () => {
   const [isOpen, setIsOpen] = useState(false);
   const toggle = () => setIsOpen(!isOpen);
+
+  const logOut = () => {
+    localStorage.removeItem('user')
+    console.log('logged out')
+  }
+
+
 return (
   
   <Router>
@@ -61,7 +69,15 @@ return (
               <NavItem>
                 <NavLink><Link to="/login">Login/Signup</Link></NavLink>
               </NavItem>
+<<<<<<< HEAD
         
+=======
+              <NavItem>
+                <Button onClick={logOut}>Logout</Button>
+              </NavItem>
+              
+
+>>>>>>> 36939ecf43cf749836fce7e59fc87b1e5265da92
             </Nav>
           </Collapse>
         </Navbar>
