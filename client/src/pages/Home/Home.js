@@ -14,6 +14,8 @@ import Thread from '../Thread'
 import Post from '../../components/Post'
 import Moment from 'react-moment'
 import './Home.css'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 
@@ -44,7 +46,9 @@ const Home = () => {
   // function to hanlde a user making a post
   postState.handlePost = event => {
     event.preventDefault()
-    console.log('hi')
+ 
+
+ 
     toggle2()
 
     axios.post('/api/posts', {
@@ -66,10 +70,17 @@ const Home = () => {
     })
     .catch(err => {
       console.log('toast "you need to log in"')
-      window.location = '/login'
+      toast.error(' Please log in to make a post!', {
+        position: "bottom-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        });
     })
-
-
+ 
   }
 
 
@@ -170,7 +181,10 @@ const Home = () => {
     </Dropdown>
   </Col>
         <Col xs="4"> <div>
+{localStorage.getItem('user')  ? 
       <Button color="danger" onClick={toggle2}>Make a Post</Button>
+      : null
+}
       <Modal isOpen={modal} toggle={toggle2}>
         <ModalHeader toggle={toggle2}>Make a post</ModalHeader>
         <ModalBody>
