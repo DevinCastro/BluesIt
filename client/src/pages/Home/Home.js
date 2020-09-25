@@ -12,8 +12,7 @@ import {
 } from 'react-router-dom'
 import Thread from '../Thread'
 import Post from '../../components/Post'
-import 
-
+import Moment from 'react-moment'
 
 
 
@@ -215,6 +214,7 @@ const Home = () => {
                       text={post.text}
                       handleLike={postState.handleLike}
                       commentNum={post.comments.length}
+                      date={post.createdAt}
                       />
                     {/* </Link> */}
                     </div>
