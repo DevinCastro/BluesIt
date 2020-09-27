@@ -83,7 +83,7 @@ const Threadpost = props => {
                     {/* <CardImg top width="100%" src="/assets/318x180.svg" alt="Card image cap" /> */}
                     <CardBody>
                         <CardTitle>Post by: {props.username}</CardTitle>
-                        <CardSubtitle>Likes: {props.likes}</CardSubtitle>
+                        <CardSubtitle>👍 {props.likes}</CardSubtitle>
                         <CardSubtitle>Title: {props.title}</CardSubtitle>
                         <CardText>{props.text}</CardText>
                         <CardText><a target="_blank" href={props.postLink}>{props.postLink}</a></CardText>
