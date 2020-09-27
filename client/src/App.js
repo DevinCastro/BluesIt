@@ -21,6 +21,7 @@ import {
 import logo from './logo.png'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import './style.css'
 
 
 const App = () => {
@@ -70,7 +71,7 @@ return (
               <NavItem>
                 <NavLink><Link to="/login">Login/Signup</Link></NavLink>
               </NavItem>
-              <NavItem>
+              <NavItem >
                 <Button onClick={logOut}>Logout</Button>
               </NavItem>
               

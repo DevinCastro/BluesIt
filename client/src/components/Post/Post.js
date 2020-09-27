@@ -13,6 +13,7 @@ import Thread from '../../pages/Thread'
 import axios from 'axios'
 import { PromiseProvider } from 'mongoose';
 import Moment from 'react-moment';
+import './Post.css'
 
 
 const Post = props => {
@@ -25,17 +26,18 @@ const Post = props => {
   return (
     <>
       <div className="post-body">
-        <Card className="w-full card main-body">
+        <Card className="w-full main-body" id="allpost">
           {/* <CardImg top width="100%" src="/assets/318x180.svg" alt="Card image cap" /> */}
-          <CardBody>
-            <CardTitle>Post by: {props.username}</CardTitle>
-            <CardSubtitle>Likes: {props.likes}</CardSubtitle>
-            <CardSubtitle>Title: {props.title}</CardSubtitle>
-            <CardText>{props.text}</CardText>
+          <CardBody className=" main-body inner-body">
+            <CardTitle id="user">Post by: {props.username}</CardTitle>
+            <CardSubtitle id="title"> {props.title}</CardSubtitle>
+            <CardText id="text">{props.text}</CardText>
             <CardText><a target='_blank' href={props.link}>{props.link}</a></CardText>
+            <row>
+            <CardText id="likes">Likes: {props.likes}</CardText>
             <CardText>{props.commentNum} comments</CardText>
-            <CardText>Posted on: <Moment format="MM/DD/YY h:mm a">{props.date}</Moment> </CardText>
-
+            <CardText id="time">Posted on: <Moment format="MM/DD/YY h:mm a">{props.date}</Moment> </CardText>
+            </row>
             {props.liked ? <Button id={props.id} data-likes={props.likes} data-liked={props.liked} onClick={props.handleLike}>Unlike</Button> : <Button id={props.id} data-likes={props.likes} data-liked={props.liked} onClick={props.handleLike}>Like</Button>}
             <Link to={`/thread/${props.id}`}><Button id={props.id}>View Thread</Button></Link>
           </CardBody>

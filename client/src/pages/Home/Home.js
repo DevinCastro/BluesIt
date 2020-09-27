@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { Button, Container, Row, Col } from 'reactstrap';
 import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
 import { Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
-import { Form, FormGroup, Label, Input, FormText } from 'reactstrap';
+import { Form, FormGroup, Label, Input, FormText, CustomInput } from 'reactstrap';
 import {
   BrowserRouter as Router,
   Switch,
@@ -14,8 +14,6 @@ import Thread from '../Thread'
 import Post from '../../components/Post'
 import Moment from 'react-moment'
 import './Home.css'
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 
 
 
@@ -46,9 +44,7 @@ const Home = () => {
   // function to hanlde a user making a post
   postState.handlePost = event => {
     event.preventDefault()
- 
-
- 
+    console.log('hi')
     toggle2()
 
     axios.post('/api/posts', {
@@ -70,17 +66,10 @@ const Home = () => {
     })
     .catch(err => {
       console.log('toast "you need to log in"')
-      toast.error(' Please log in to make a post!', {
-        position: "bottom-right",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        });
+      window.location = '/login'
     })
- 
+
+
   }
 
 
@@ -158,7 +147,6 @@ const Home = () => {
 
 
 
-
   return (
     <>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet"></link>
@@ -169,8 +157,8 @@ const Home = () => {
         <Col xs="9">
 
         <Row>
-        <Col xs="4"> <Dropdown isOpen={dropdownOpen} toggle={toggle}>
-      <DropdownToggle caret>
+        <Col xs="6 "> <Dropdown isOpen={dropdownOpen} toggle={toggle}>
+      <DropdownToggle id="sortby" caret>
         Sort By
         </DropdownToggle>
       <DropdownMenu>
@@ -180,11 +168,8 @@ const Home = () => {
         </DropdownMenu>
     </Dropdown>
   </Col>
-        <Col xs="4"> <div>
-{localStorage.getItem('user')  ? 
+        <Col xs="6"> <div>
       <Button color="danger" onClick={toggle2}>Make a Post</Button>
-      : null
-}
       <Modal isOpen={modal} toggle={toggle2}>
         <ModalHeader toggle={toggle2}>Make a post</ModalHeader>
         <ModalBody>
@@ -211,6 +196,10 @@ const Home = () => {
             value={postState.link}
             onChange={postState.handleInputChange}
             />
+             <FormGroup>
+        <Label for="exampleCustomFileBrowser">File Browser</Label>
+        <CustomInput type="file" id="exampleCustomFileBrowser" name="customFile" />
+      </FormGroup>
             </FormGroup>
             <Button color="primary" onClick={postState.handlePost}>Post</Button>
           </Form>
@@ -220,8 +209,12 @@ const Home = () => {
         </ModalFooter>
       </Modal>
     </div></Col>
-        <Col xs="4">Search</Col>
+
+
+  
         </Row>
+
+    <br></br>
         
         <Row>
           <div>
@@ -252,7 +245,20 @@ const Home = () => {
         </Row>
 
         </Col>
-        <Col>Tab search Maybe?</Col>
+        {/* <Col>Tab search Maybe?</Col> */}
+        <Col>
+
+        <FormGroup>
+        <Label for="search">Search</Label>
+        <Input className='search' type="search" id="tabsearch" name="tabsearch" />
+      </FormGroup>
+      {/* <FormGroup>
+        <Label for="exampleCustomFileBrowser">File Browser with Custom Label</Label>
+        <CustomInput type="file" id="exampleCustomFileBrowser" name="customFile" label="Yo, pick a file!" />
+      </FormGroup> */}
+        
+        </Col>
+
         </Row>
         </div>
     </>

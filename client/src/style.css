@@ -1,10 +1,20 @@
-* {
+/* * {
     background-color: gainsboro;
     
         font-family: 'Montserrat', sans-serif;
 
-}
+} */
 
+/* * {
+    background-color: gainsboro;
+} */
+
+
+
+body {
+background-color: gainsboro;
+ padding: 30px;
+}
 
 /* .card {
 
@@ -26,8 +36,4 @@
     font-family: 'Montserrat', sans-serif;
 }
 
-
-
-/* .navlink {
-  ;
-} */
+  
