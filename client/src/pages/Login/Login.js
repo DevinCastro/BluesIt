@@ -15,20 +15,33 @@ const Login = () => {
     username: '',
     password: '',
     lPassword: '',
-    lUsername: ''
+    lUsername: '',
+    image: ''
   })
+
+  registerState.handleFile = event => {
+    console.log(event.target.files[0])
+    setRegisterState({ ...registerState, image: event.target.files[0] })
+  }
 
   registerState.handleRegister = event => {
     event.preventDefault()
-    axios.post('/api/users/register', {
-      name: registerState.name,
-      email: registerState.email,
-      username: registerState.username,
-      password: registerState.password
-    })
-    .then(() => {
-      // console.log('Registered!')
-      setRegisterState({ ...registerState, name: '', email: '', username: '', password: ''})
+
+    // const formData = new FormData()
+    // formData.append("img", registerState.image)
+    
+
+    // axios.post('/api/users/register', {
+    //   name: registerState.name,
+    //   email: registerState.email,
+    //   username: registerState.username,
+    //   password: registerState.password,
+    //   image: formData
+
+    // })
+    // .then(() => {
+    //   // console.log('Registered!')
+      // setRegisterState({ ...registerState, name: '', email: '', username: '', password: '' })
       toast.success('Account Created!', {
         position: "bottom-right",
         autoClose: 3000,
@@ -38,8 +51,8 @@ const Login = () => {
         draggable: true,
         progress: undefined,
         });
-    })
-    .catch(err => console.log(err))
+    // })
+    // .catch(err => console.log(err))
   }
 
   registerState.handleInputChange = event => {
@@ -77,42 +90,126 @@ const Login = () => {
   return (
     <>
 
-
+<iframe name='hidden-frame'></iframe>
 <h1>Sign Up Page</h1>
-      <form>
+      <form target='hidden-frame' action='/api/users/register' method='POST' encType="multipart/form-data"> 
         <p>
           <label htmlFor="name">Name</label>
           <input type="text"
           name="name" 
-          value={registerState.name}
-          onChange={registerState.handleInputChange} />
+          // value={registerState.name}
+          // onChange={registerState.handleInputChange} 
+          />
         </p>
         <p>
           <label htmlFor="email">Email</label>
           <input type="email"
           name="email" 
-          value={registerState.email}
-          onChange={registerState.handleInputChange}/>
+          // value={registerState.email}
+          // onChange={registerState.handleInputChange}
+          />
         </p>
         <p>
           <label htmlFor="username">Username</label>
           <input type="text"
           name="username" 
-          value={registerState.username}
-          onChange={registerState.handleInputChange}/>
+          // value={registerState.username}
+          // onChange={registerState.handleInputChange}
+          />
         </p>
         <p>
           <label htmlFor="password">Password</label>
           <input type="password"
           name="password" 
-          value={registerState.password}
-          onChange={registerState.handleInputChange}/>
+          // value={registerState.password}
+          // onChange={registerState.handleInputChange}
+          />
         </p>
         <p>
-          <button onClick={registerState.handleRegister}>Submit</button>
+          <label for="exampleCustomFileBrowser">File Browser</label>
+          <input 
+          type="file" 
+          name="image"
+          // value={registerState.image}
+          // onChange={registerState.handleFile}  
+          />
+        </p>
+            
+        <p>
+          <button 
+          // onClick={registerState.handleRegister}
+          >Submit</button>
           <ToastContainer />
         </p>
       </form>
+
+
+      {/* <form encType="multipart/form-data">
+        <p>
+          <label htmlFor="name">Name</label>
+          <input type="text"
+            name="name"
+          value={registerState.name}
+          onChange={registerState.handleInputChange} 
+          />
+        </p>
+        <p>
+          <label htmlFor="email">Email</label>
+          <input type="email"
+            name="email"
+          value={registerState.email}
+          onChange={registerState.handleInputChange}
+          />
+        </p>
+        <p>
+          <label htmlFor="username">Username</label>
+          <input type="text"
+            name="username"
+          value={registerState.username}
+          onChange={registerState.handleInputChange}
+          />
+        </p>
+        <p>
+          <label htmlFor="password">Password</label>
+          <input type="password"
+            name="password"
+          value={registerState.password}
+          onChange={registerState.handleInputChange}
+          />
+        </p>
+
+        <p>
+          <label for="exampleCustomFileBrowser">File Browser</label>
+          <input
+            type="file"
+            name="image"
+            // value={registerState.image}
+            onChange={registerState.handleFile}  
+          />
+        </p>
+        <p>
+          <button
+          onClick={registerState.handleRegister}>Submit</button>
+          <ToastContainer />
+        </p>
+      </form>
+ */}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
       
 

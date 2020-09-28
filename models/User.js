@@ -15,9 +15,13 @@ const User = new Schema({
     unique: true,
     required: true
   },
-  genre: {
-    type: String,
-    required: false
+  // genre: {
+  //   type: String,
+  //   required: false
+  // },
+  img: {
+    data: Buffer,
+    contentType: String
   },
   posts: [{
     type: Schema.Types.ObjectId,

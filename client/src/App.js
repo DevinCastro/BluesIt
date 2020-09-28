@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import {
   BrowserRouter as Router,
   Switch,
@@ -21,6 +21,7 @@ import {
 import logo from './logo.png'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import axios from 'axios'
 
 
 const App = () => {
@@ -31,6 +32,25 @@ const App = () => {
     localStorage.removeItem('user')
    window.location = '/login'
   }
+
+  const [imageState, setImageState] = useState({
+    image: ''
+  })
+
+  useEffect(() => {
+    axios.get('/api/users', 
+     {
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem('user')}`
+      }
+    })
+     .then(({data}) => {
+       console.log(data)
+       setImageState({ ...imageState, image: `data:image/png;base64, ${data.img.data}` } )
+     })
+     .catch(err => console.log(err))
+
+  },[])
 
 
 return (
@@ -74,6 +94,10 @@ return (
                 <Button onClick={logOut}>Logout</Button>
               </NavItem>
               
+                <NavItem>
+                <img className="profilePhoto" src={imageState.image}/>
+                </NavItem>
+              
 
             </Nav>
           </Collapse>
@@ -82,6 +106,7 @@ return (
           <Route exact path="/" component={Home} />
           <Route path="/login" component={Login} />
           <Route path="/thread/:id" component={Thread} />
+          <Route path="/api/users/register" component={Login} />
         </Switch>
       </div>
       <ToastContainer limit={1}/>
