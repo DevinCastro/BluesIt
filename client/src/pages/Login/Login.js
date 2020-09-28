@@ -3,9 +3,10 @@ import axios from 'axios'
 // import { ToastConatiner, toast, ToastContainer } from 'react-toastify'
 // import 'react-toastify/dist/ReactToastify.css'
 // import API from '../../utils/API'
-import { Toast, ToastBody, ToastHeader } from 'reactstrap';
+import { Toast, ToastBody, ToastHeader, Row, Col, } from 'reactstrap';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import './Login.css'
 
 const Login = () => {
 
@@ -78,7 +79,7 @@ const Login = () => {
     <>
 
 
-<h1>Sign Up Page</h1>
+{/* <h1>Sign Up Page</h1>
       <form>
         <p>
           <label htmlFor="name">Name</label>
@@ -112,7 +113,7 @@ const Login = () => {
           <button onClick={registerState.handleRegister}>Submit</button>
           <ToastContainer />
         </p>
-      </form>
+      </form> */}
 
       
 
@@ -154,6 +155,7 @@ const Login = () => {
 
     
 
+
       <h1>Login</h1>
 
       <form>
@@ -174,21 +176,85 @@ const Login = () => {
         <p>
           <button onClick={registerState.handleLogin}>Login</button>
         </p>
-      </form> 
+      </form>  
 
-      
+      <br></br>
+
+ 
+    <Col className= "col-6 containter-fluid" id="signuparea">
 <div className="padding">
       <form className='form container-fluid center padding'>
-                <h3>Sign In</h3>
+                <h3>Sign Up</h3>
+               
+
+                <div className="form-group">
+                    <label>Name</label>
+                    <input name="email" 
+                    value={registerState.email}
+                onChange={registerState.handleInputChange} 
+                   type="Name" className="form-control" placeholder="Enter name" />
+                </div>
+
+                <div className="form-group">
+                    <label>Email</label>
+                    <input name="email" 
+          value={registerState.email}
+          onChange={registerState.handleInputChange}
+          type="email" className="form-control" placeholder="Enter email" />
+                </div>
 
                 <div className="form-group">
                     <label>Username</label>
-                    <input type="username" className="form-control input" placeholder="Enter username" />
+                    <input name="username" 
+          value={registerState.username}
+          onChange={registerState.handleInputChange}
+          className="inputtext" type="username" className="form-control input" placeholder="Enter username" />
                 </div>
 
                 <div className="form-group">
                     <label>Password</label>
-                    <input type="password" className="form-control" placeholder="Enter password" />
+                    <input name="password" 
+          value={registerState.password}
+          onChange={registerState.handleInputChange} type="password" className="form-control" placeholder="Enter password" />
+                </div>
+
+                <div className="form-group">
+                    <div className="custom-control custom-checkbox">
+                        <input type="checkbox" className="custom-control-input input" id="customCheck1" />
+                        <label className="custom-control-label" htmlFor="customCheck1">Remember me</label>
+                    </div>
+                </div>
+
+                <button onClick={registerState.handleRegister} type="submit" className="btn btn-primary btn-block">Submit</button>
+                <ToastContainer />
+                {/* <p className="forgot-password text-right">
+                    Forgot <a href="#">password?</a>
+                </p> */}
+            </form>
+        
+            </div>
+            </Col>
+
+            {/* <Col  className= "col-6 container-fluid" id ="loginarea">
+
+            <div className="padding">
+      <form className='form container-fluid center padding'>
+                <h3>Log In</h3>
+
+                <div className="form-group">
+                    <label>Username</label>
+                    <input name="lUsername" 
+          value={registerState.lUsername}
+          onChange={registerState.handleInputChange}
+          className="inputtext" type="username" className="form-control input" placeholder="Enter username" />
+                </div>
+
+                <div className="form-group">
+                    <label>Password</label>
+                    <input name="lPassword" 
+          value={registerState.lPassword}
+          onChange={registerState.handleInputChange}
+          type="password" className="form-control" placeholder="Enter password" />
                 </div>
 
                 <div className="form-group">
@@ -205,6 +271,15 @@ const Login = () => {
             </form>
         
             </div>
+            </Col> */}
+
+
+
+
+
+
+
+         
            
     </>
   )

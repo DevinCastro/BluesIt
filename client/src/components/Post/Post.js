@@ -26,15 +26,16 @@ const Post = props => {
   return (
     <>
       <div className="post-body">
-        <Card className="w-full card main-body">
+        <Card className="w-full main-body">
           {/* <CardImg top width="100%" src="/assets/318x180.svg" alt="Card image cap" /> */}
-          <CardBody>
+          <Card >
             <CardTitle id="user">Post by: {props.username}</CardTitle>
-            <CardSubtitle id="likes">👍 {props.likes}</CardSubtitle>
+
             <CardSubtitle id="title"> {props.title}</CardSubtitle>
             <CardText id="text">{props.text}</CardText>
             <CardText><a target='_blank' href={props.link}>{props.link}</a></CardText>
-            <CardText>{props.commentNum} comments</CardText>
+            <CardSubtitle id="likes">👍 {props.likes}</CardSubtitle>
+            <CardText id="comments">{props.commentNum} comments</CardText>
             <CardText id="time">Posted on: <Moment format="MM/DD/YY h:mm a">{props.date}</Moment> </CardText>
 
           { localStorage.getItem('user') ?
@@ -48,7 +49,7 @@ const Post = props => {
 
 
             <Link to={`/thread/${props.id}`}><Button id={props.id}>View Thread</Button></Link>
-          </CardBody>
+          </Card>
         </Card>
       </div>
 

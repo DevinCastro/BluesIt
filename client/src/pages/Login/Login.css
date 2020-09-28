@@ -1,3 +1,8 @@
+
+* {
+  box-sizing: border-box;
+}
+
 body, html, #root, .app, .container {
     width: 100%;
     height: 100%;
@@ -52,5 +57,30 @@ body, html, #root, .app, .container {
       padding-left: 150px;
       padding-right: 150px;
   }
+
+  #loginarea {
+    display: inline-flex;
+    align-items: center;
+    vertical-align: center;
+  
+   
+ 
+  }
+
+  #signuparea {
+    display: inline-flex;
+    align-items: center;
+ 
+  }
+/* 
+  @media screen and (max-width: 600px) {
+    .column {
+      width: 100%;
+      display: inline
+    }
+  } */
+
+
+
   
 

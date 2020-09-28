@@ -150,7 +150,7 @@ const Home = () => {
   return (
     <>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet"></link>
-      <h1 className='center font'>BluesIt</h1>
+      <h1 className='center font'>BLUESIT</h1>
       <hr></hr>
       <div>
         <Row>
