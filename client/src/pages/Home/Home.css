@@ -4,11 +4,11 @@
     padding: 10px
 }
 
-h1 {
+#frontlogo {
     font-size: 80px;
     text-align: center;
-    color: #fff;
-    animation: glow 1s ease-in-out infinite alternate;
+    color: blue;
+    animation: glow 1s ease-in-out infinite alternate; 
   }
   
   @keyframes glow {
@@ -21,7 +21,8 @@ h1 {
   }
 
 .sortby {
-    align-items: center;
+    align-content: center;
+    margin-left: 25px;
 }
 
 

@@ -150,15 +150,15 @@ const Home = () => {
   return (
     <>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet"></link>
-      <h1 className='center font'>BLUESIT</h1>
+      <h1 id="frontlogo" className='center font'>BLUESIT</h1>
       <hr></hr>
       <div>
         <Row>
         <Col xs="9">
 
         <Row>
-        <Col xs="6 "> <Dropdown isOpen={dropdownOpen} toggle={toggle}>
-      <DropdownToggle id="sortby" caret>
+        <Col xs="6 " className= "d-flex justify-content-center"> <Dropdown isOpen={dropdownOpen} toggle={toggle}>
+      <DropdownToggle  caret>
         Sort By
         </DropdownToggle>
       <DropdownMenu>
@@ -168,7 +168,7 @@ const Home = () => {
         </DropdownMenu>
     </Dropdown>
   </Col>
-        <Col xs="6"> <div>
+        <Col xs="6" > <div>
       <Button color="danger" onClick={toggle2}>Make a Post</Button>
       <Modal isOpen={modal} toggle={toggle2}>
         <ModalHeader toggle={toggle2}>Make a post</ModalHeader>
