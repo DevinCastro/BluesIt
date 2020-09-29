@@ -1,3 +1,10 @@
 #small {
   font-size: 10px;
 }
+
+.likeMe {
+  border-radius: 25px !important;
+  margin-left: 5px;
+  margin-right: 5px;
+  background-color: black !important;
+}

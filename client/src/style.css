@@ -18,11 +18,48 @@ border-radius: 25px;
 
 
 .center {
-    text-align: center
+  text-align: center
 }
 
 .font {
-    font-family: 'Montserrat', sans-serif;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.logout {
+  background-color: black;
+  border: 0rem;
+  color: #0470db;
+  position: relative;
+  text-decoration: none;
+}
+
+.logout:hover{
+  background-color: black;
+  color: #034e99;
+}
+
+.logout::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #000;
+  visibility: hidden;
+  transform: scaleX(0);
+  transition: all 0.3s ease-in-out 0s;
+}
+
+.logout::before {
+  visibility: visible;
+  transform: scaleX(1);
+}
+
+.profilePhoto {
+  width: 50px;
+  height: 50px;
+border-radius: 25px;
 }
 
 

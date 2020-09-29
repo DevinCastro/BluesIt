@@ -136,13 +136,11 @@ const Home = () => {
       })
   }
 
-
   postState.handleLikeSort = () => {
     const posts = postState.posts.sort((a, b) => b.likes - a.likes)
 
     setPostState({ ...postState, posts })
   }
-
 
   postState.handleRecentSort = () => {
     const posts = postState.posts.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
@@ -155,9 +153,6 @@ const Home = () => {
 
     setPostState({ ...postState, posts })
   }
-
-
-
 
   return (
     <>
@@ -173,10 +168,10 @@ const Home = () => {
                   <DropdownToggle caret>
                     Sort By
                   </DropdownToggle>
-                  <DropdownMenu>
-                    <DropdownItem><Button onClick={postState.handleLikeSort}>Most Liked</Button></DropdownItem>
-                    <DropdownItem><Button onClick={postState.handleRecentSort}>Most Recent</Button></DropdownItem>
-                    <DropdownItem><Button onClick={postState.handleCommentSort}>Most Comments</Button></DropdownItem>
+                  <DropdownMenu className="black solidBorder">
+                    <DropdownItem className="black"><Button className="dropDown" onClick={postState.handleLikeSort}>Most Liked</Button></DropdownItem>
+                    <DropdownItem className="black"><Button className="dropDown" onClick={postState.handleRecentSort}>Most Recent</Button></DropdownItem>
+                    <DropdownItem className="black"><Button className="dropDown" onClick={postState.handleCommentSort}>Most Comments</Button></DropdownItem>
                   </DropdownMenu>
                 </Dropdown>
               </Col>
@@ -227,8 +222,9 @@ const Home = () => {
           </Col>
         </Row>
         <hr className="white"></hr>
-        <Row className="d-flex justfiy-content-center">
-            <div className="post">
+        <Row className="card">
+          <Col>
+            <div className="please"> 
               {
                 postState.posts.length > 0 ? (
                   postState.posts.map(post => (
@@ -252,6 +248,10 @@ const Home = () => {
                 ) : null
               }
             </div>
+          </Col>
+          {/* <Col xs="3">
+            <h1>kill me</h1>
+          </Col> */}
         </Row>
       </div>
     </>
