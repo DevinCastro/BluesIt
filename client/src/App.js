@@ -82,6 +82,8 @@ const App = () => {
 
             </Nav>
           </Collapse>
+
+          
             
             <Button className="float-right" onClick={logOut}>Logout</Button>
             <img className="profilePhoto" src={imageState.image} />

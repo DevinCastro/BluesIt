@@ -4,6 +4,7 @@ import { Button, Container, Row, Col } from 'reactstrap';
 import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
 import { Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import { Form, FormGroup, Label, Input, FormText, CustomInput } from 'reactstrap';
+
 import {
   BrowserRouter as Router,
   Switch,
@@ -14,6 +15,8 @@ import Thread from '../Thread'
 import Post from '../../components/Post'
 import Moment from 'react-moment'
 import './Home.css'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 
