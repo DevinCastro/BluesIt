@@ -85,9 +85,9 @@ return (
         
       />
               
-              <NavItem className="justify-content-end">
+              <Nav className="justify-content-end">
                 <NavLink><Link to="/">Home</Link></NavLink>
-              </NavItem>
+              </Nav>
               <NavItem>
                 <NavLink><Link to="/login">Login/Signup</Link></NavLink>
               </NavItem>

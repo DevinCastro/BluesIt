@@ -29,10 +29,15 @@ const Post = props => {
           {/* <CardImg top width="100%" src="/assets/318x180.svg" alt="Card image cap" /> */}
           <CardBody>
             <CardSubtitle>👍 {props.likes}</CardSubtitle>
-            <CardSubtitle>Title: {props.title}</CardSubtitle>
+            <CardSubtitle> {props.title}</CardSubtitle>
             <CardText>{props.text}</CardText>
             <CardText><a target='_blank' href={props.link}>{props.link}</a></CardText>
             <CardTitle>Post by: {props.username}</CardTitle>
+            <Row>
+            <Col xs="4"><CardText id="user">Post by: {props.username}</CardText></Col>
+          <Col xs="4"><CardText id="comments">{props.commentNum} comments</CardText></Col>
+        <Col xs="4"><CardText id="time">Posted on: <Moment format="MM/DD/YY h:mm a">{props.date}</Moment> </CardText></Col> 
+           </Row>
             <CardText>{props.commentNum} comments</CardText>
             <CardText>Posted on: <Moment format="MM/DD/YY h:mm a">{props.date}</Moment> </CardText>
           { localStorage.getItem('user') ?
