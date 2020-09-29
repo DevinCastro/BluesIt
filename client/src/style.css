@@ -1,11 +1,14 @@
 
 
 * {
-    background-image: './background.pdf';
+    background-color: black;
+    font-family: 'Montserrat', sans-serif;
     color: white;
-  
-} 
+}
 
+.white {
+  background-color: #0470db;
+}
 
 .profilePhoto {
   width: 50px;
@@ -22,4 +25,10 @@ border-radius: 25px;
     font-family: 'Montserrat', sans-serif;
 }
 
-  
+
+
+/* .navlink {
+  ;
+} */
+
+

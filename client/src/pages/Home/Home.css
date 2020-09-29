@@ -1,28 +1,28 @@
 .font {
     font-family: 'Montserrat', sans-serif;
-    color: blue;
-    padding: 10px
 }
 
-#frontlogo {
-    font-size: 80px;
-    text-align: center;
-    color: blue;
-    animation: glow 1s ease-in-out infinite alternate; 
-  }
-  
-  @keyframes glow {
-    from {
-      text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #0073e6, 0 0 20px #0073e6, 0 0 25px #0073e6, 0 0 30px #0073e6, 0 0 35px #0073e6;
-    }
-    to {
-      text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #0073e6, 0 0 40px #0073e6, 0 0 50px #0073e6, 0 0 60px #0073e6, 0 0 70px #0073e6;
-    }
-  }
-
-.sortby {
-    align-content: center;
+.post {
+    margin-left: 25px;
     margin-left: 25px;
 }
 
+#frontLogo {
+    font-size: 80px;
+    text-align: center;
+    color: #0470db;
+    animation: glow 5s ease-in-out infinite alternate;
+  }
+  @keyframes glow {
+    from {
+      text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #0073E6, 0 0 20px #0073E6, 0 0 25px #0073E6, 0 0 30px #0073E6, 0 0 35px #0073E6;
+    }
+    to {
+      text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #0073E6, 0 0 40px #0073E6, 0 0 50px #0073E6, 0 0 60px #0073E6, 0 0 70px #0073E6;
+    }
+  }
+
+.smallPost {    
+    margin-bottom: 25px;
+}
 
