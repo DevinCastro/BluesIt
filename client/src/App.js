@@ -69,22 +69,19 @@ const App = () => {
                 className="d-inline-block align-top"
                 alt="React Bootstrap logo"
                 to="/"
-
               />
-
               <NavItem className="justify-content-end">
                 <NavLink><Link to="/">Home</Link></NavLink>
               </NavItem>
               <NavItem>
                 <NavLink><Link to="/login">Login/Signup</Link></NavLink>
               </NavItem>
-
             </Nav>
           </Collapse>
-            
-            <Button className="float-right" onClick={logOut}>Logout</Button>
-            <img className="profilePhoto" src={imageState.image} />
-            
+            <div>
+              <img className="profilePhoto float-right" src={imageState.image} />
+              <Button className="float-right logout" onClick={logOut}>Logout</Button>
+            </div>
         </Navbar>
         <Switch>
           <Route exact path="/" component={Home} />

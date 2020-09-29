@@ -2,9 +2,8 @@
     font-family: 'Montserrat', sans-serif;
 }
 
-.post {
-    margin-left: 25px;
-    margin-left: 25px;
+.please {
+  width: 60%;
 }
 
 #frontLogo {
@@ -24,5 +23,18 @@
 
 .smallPost {    
     margin-bottom: 25px;
+}
+
+.dropDown {
+  border-radius: 25px;
+  width: 100%;
+}
+
+.black {
+  background-color: black !important;
+}
+
+.solidBorder {
+  border: 1px white solid !important;
 }
 
