@@ -1,32 +1,17 @@
-/* * {
-    background-color: gainsboro;
-    
-        font-family: 'Montserrat', sans-serif;
 
-} */
 
 /* * {
-    background-color: gainsboro;
+    background-color: black;
 } */
-
-
 
 body {
-background-color: gainsboro;
- padding: 30px;
+background-color: rgb(31, 30, 30);
 }
 
-/* .card {
+#logout {
+    background-color: black;
+}
 
-} */
-
-/* .center1 {
-    text-align: center;
-    display: block;
-    justify-content: center;
-    align-items: center;
-    margin: auto;
-  } */
 
 .center {
     text-align: center

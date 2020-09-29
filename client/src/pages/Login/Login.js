@@ -235,7 +235,7 @@ const Login = () => {
             </div>
             </Col>
 
-            {/* <Col  className= "col-6 container-fluid" id ="loginarea">
+            <Col  className= "col-6 container-fluid" id ="loginarea">
 
             <div className="padding">
       <form className='form container-fluid center padding'>
@@ -271,7 +271,7 @@ const Login = () => {
             </form>
         
             </div>
-            </Col> */}
+            </Col>
 
 
 

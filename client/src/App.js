@@ -71,10 +71,10 @@ return (
               <NavItem>
                 <NavLink><Link to="/login">Login/Signup</Link></NavLink>
               </NavItem>
-              <NavItem >
-                <Button onClick={logOut}>Logout</Button>
+              {/* <NavItem >
+                <Button id="logout" onClick={logOut}>Logout</Button>
               </NavItem>
-              
+               */}
 
             </Nav>
           </Collapse>
