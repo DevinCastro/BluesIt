@@ -1,8 +1,11 @@
 * {
-    background-color: gainsboro;
-    
-        font-family: 'Montserrat', sans-serif;
+    background-color: black;
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+}
 
+.white {
+  background-color: #0470db;
 }
 
 .profilePhoto {
@@ -35,3 +38,5 @@
 /* .navlink {
   ;
 } */
+
+

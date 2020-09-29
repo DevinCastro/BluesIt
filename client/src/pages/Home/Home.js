@@ -41,14 +41,14 @@ const Home = () => {
     setPostState({ ...postState, [event.target.name]: event.target.value })
   }
 
-  
+
 
   // function to hanlde a user making a post
   postState.handlePost = event => {
     event.preventDefault()
- 
 
- 
+
+
     toggle2()
 
     axios.post('/api/posts', {
@@ -61,26 +61,26 @@ const Home = () => {
         Authorization: `Bearer ${localStorage.getItem('user')}`
       }
     })
-    .then(({data}) => {
+      .then(({ data }) => {
 
-      console.log(data)
-      setPostState({ ...postState, text: '' })
-      window.location = '/'
-    
-    })
-    .catch(err => {
-      console.log('toast "you need to log in"')
-      toast.error(' Please log in to make a post!', {
-        position: "bottom-right",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
+        console.log(data)
+        setPostState({ ...postState, text: '' })
+        window.location = '/'
+
+      })
+      .catch(err => {
+        console.log('toast "you need to log in"')
+        toast.error(' Please log in to make a post!', {
+          position: "bottom-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
         });
-    })
- 
+      })
+
   }
 
 
@@ -100,7 +100,7 @@ const Home = () => {
 
 
 
- 
+
 
   postState.handleLike = event => {
     console.log(event.target.id)
@@ -121,13 +121,13 @@ const Home = () => {
         let posts = JSON.parse(JSON.stringify(postState.posts))
         posts.forEach(post => {
           if (post._id === id) {
-         
+
             post.likes = likes
             post.liked = !post.liked
           }
         })
 
-        setPostState({ ...postState, posts})
+        setPostState({ ...postState, posts })
 
       })
       .catch(err => {
@@ -137,22 +137,22 @@ const Home = () => {
 
 
   postState.handleLikeSort = () => {
-    const posts = postState.posts.sort((a,b) => b.likes - a.likes)
-    
-    setPostState({ ...postState, posts})
+    const posts = postState.posts.sort((a, b) => b.likes - a.likes)
+
+    setPostState({ ...postState, posts })
   }
 
 
   postState.handleRecentSort = () => {
-    const posts = postState.posts.sort((a,b) => new Date(b.createdAt) - new Date(a.createdAt))
-    
-    setPostState({ ...postState, posts})
+    const posts = postState.posts.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
+
+    setPostState({ ...postState, posts })
   }
-   
+
   postState.handleCommentSort = () => {
-    const posts = postState.posts.sort((a,b) => b.comments.length - a.comments.length)
-    
-    setPostState({ ...postState, posts})
+    const posts = postState.posts.sort((a, b) => b.comments.length - a.comments.length)
+
+    setPostState({ ...postState, posts })
   }
 
 
@@ -161,100 +161,99 @@ const Home = () => {
 
   return (
     <>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet"></link>
-      <h1 className='center font'>BluesIt</h1>
+      <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet"></link>
+      <h1 id="frontLogo" className='center font'>BluesIt</h1>
       <hr></hr>
       <div>
-        <Row>
-        <Col xs="9">
-
-        <Row>
-        <Col xs="4"> <Dropdown isOpen={dropdownOpen} toggle={toggle}>
-      <DropdownToggle caret>
-        Sort By
-        </DropdownToggle>
-      <DropdownMenu>
-        <DropdownItem><Button onClick={postState.handleLikeSort}>Most Liked</Button></DropdownItem>
-        <DropdownItem><Button onClick={postState.handleRecentSort}>Most Recent</Button></DropdownItem>
-        <DropdownItem><Button onClick={postState.handleCommentSort}>Most Comments</Button></DropdownItem>
-        </DropdownMenu>
-    </Dropdown>
-  </Col>
-        <Col xs="4"> <div>
-{localStorage.getItem('user')  ? 
-      <Button color="danger" onClick={toggle2}>Make a Post</Button>
-      : null
-}
-      <Modal isOpen={modal} toggle={toggle2}>
-        <ModalHeader toggle={toggle2}>Make a post</ModalHeader>
-        <ModalBody>
-          <Form>
-            <FormGroup>
-            <Label for="exampleText">Title</Label>
-            <Input 
-            type="textarea" 
-            name="title"
-            value={postState.title}
-            onChange={postState.handleInputChange}
-            />
-            <Label for="exampleText">Post</Label>
-            <Input 
-            type="textarea" 
-            name="text"
-            value={postState.text}
-            onChange={postState.handleInputChange}
-            />
-            <Label for="exampleText">Link (Optional)</Label>
-            <Input 
-            type="textarea" 
-            name="link"
-            value={postState.link}
-            onChange={postState.handleInputChange}
-            />
-            </FormGroup>
-            <Button color="primary" onClick={postState.handlePost}>Post</Button>
-          </Form>
-        </ModalBody>
-        <ModalFooter>
-        <Button color="secondary" onClick={toggle2}>Cancel</Button>
-        </ModalFooter>
-      </Modal>
-    </div></Col>
-        <Col xs="4">Search</Col>
+        <Row className="nav">
+          <Col xs="12">
+            <Row className="text-center">
+              <Col xs="4"> 
+                <Dropdown isOpen={dropdownOpen} toggle={toggle}>
+                  <DropdownToggle caret>
+                    Sort By
+                  </DropdownToggle>
+                  <DropdownMenu>
+                    <DropdownItem><Button onClick={postState.handleLikeSort}>Most Liked</Button></DropdownItem>
+                    <DropdownItem><Button onClick={postState.handleRecentSort}>Most Recent</Button></DropdownItem>
+                    <DropdownItem><Button onClick={postState.handleCommentSort}>Most Comments</Button></DropdownItem>
+                  </DropdownMenu>
+                </Dropdown>
+              </Col>
+              <Col xs="4"> 
+                <div>
+                  {localStorage.getItem('user') ?
+                    <Button color="danger" onClick={toggle2}>Make a Post</Button>
+                    : null
+                  }
+                  <Modal isOpen={modal} toggle={toggle2}>
+                    <ModalHeader toggle={toggle2}>Make a post</ModalHeader>
+                    <ModalBody>
+                      <Form>
+                        <FormGroup>
+                          <Label for="exampleText">Title</Label>
+                          <Input
+                            type="textarea"
+                            name="title"
+                            value={postState.title}
+                            onChange={postState.handleInputChange}
+                          />
+                          <Label for="exampleText">Post</Label>
+                          <Input
+                            type="textarea"
+                            name="text"
+                            value={postState.text}
+                            onChange={postState.handleInputChange}
+                          />
+                          <Label for="exampleText">Link (Optional)</Label>
+                          <Input
+                            type="textarea"
+                            name="link"
+                            value={postState.link}
+                            onChange={postState.handleInputChange}
+                          />
+                        </FormGroup>
+                        <Button color="primary" onClick={postState.handlePost}>Post</Button>
+                      </Form>
+                    </ModalBody>
+                    <ModalFooter>
+                      <Button color="secondary" onClick={toggle2}>Cancel</Button>
+                    </ModalFooter>
+                  </Modal>
+                </div>
+              </Col>
+              <Col xs="4">Search</Col>
+            </Row>
+          </Col>
         </Row>
-        
-        <Row>
-          <div>
-
+        <hr className="white"></hr>
+        <Row className="d-flex justfiy-content-center">
+            <div className="post">
               {
                 postState.posts.length > 0 ? (
                   postState.posts.map(post => (
                     <div key={post._id}>
-                    {/* <Link to="/thread"> */}
-                      <Post 
-                      id={post._id}
-                      username={post.user.username}
-                      title={post.title}
-                      likes={post.likes}
-                      liked={post.liked}
-                      text={post.text}
-                      handleLike={postState.handleLike}
-                      commentNum={post.comments.length}
-                      date={post.createdAt}
-                      link={post.link}
+                      {/* <Link to="/thread"> */}
+                      <Post className="smallPost"
+                        id={post._id}
+                        username={post.user.username}
+                        title={post.title}
+                        likes={post.likes}
+                        liked={post.liked}
+                        text={post.text}
+                        handleLike={postState.handleLike}
+                        commentNum={post.comments.length}
+                        date={post.createdAt}
+                        link={post.link}
                       />
-                    {/* </Link> */}
+                      {/* </Link> */}
                     </div>
                   ))
-                  ) : null
-                }
-                </div>
+                ) : null
+              }
+            </div>
         </Row>
-
-        </Col>
-        <Col>Tab search Maybe?</Col>
-        </Row>
-        </div>
+      </div>
     </>
   )
 }

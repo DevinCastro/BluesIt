@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import {
   Card, CardImg, CardText, CardBody,
-  CardTitle, CardSubtitle, Button
+  CardTitle, CardSubtitle, Button, Row, Col
 } from 'reactstrap';
 import {
   BrowserRouter as Router,
@@ -13,6 +13,7 @@ import Thread from '../../pages/Thread'
 import axios from 'axios'
 import { PromiseProvider } from 'mongoose';
 import Moment from 'react-moment';
+import './Post.css'
 
 
 const Post = props => {
@@ -28,21 +29,23 @@ const Post = props => {
         <Card className="w-full card main-body">
           {/* <CardImg top width="100%" src="/assets/318x180.svg" alt="Card image cap" /> */}
           <CardBody>
-            <CardTitle>Post by: {props.username}</CardTitle>
-            <CardSubtitle>👍 {props.likes}</CardSubtitle>
-            <CardSubtitle>Title: {props.title}</CardSubtitle>
+            <CardSubtitle><h1>{props.title}</h1></CardSubtitle>
             <CardText>{props.text}</CardText>
             <CardText><a target='_blank' href={props.link}>{props.link}</a></CardText>
-            <CardText>{props.commentNum} comments</CardText>
-            <CardText>Posted on: <Moment format="MM/DD/YY h:mm a">{props.date}</Moment> </CardText>
-
+            <Row id="small">
+              <Col>
+                <CardTitle>Post by: {props.username}</CardTitle>
+              </Col>
+              <Col>
+                <CardText>{props.commentNum} comments</CardText>
+              </Col>
+              <Col>
+                <CardText>Posted on: <Moment format="MM/DD/YY h:mm a">{props.date}</Moment></CardText>
+              </Col>
+            </Row>
           { localStorage.getItem('user') ?
-
-            
-              (props.liked ? <Button id={props.id} data-likes={props.likes} data-liked={props.liked} onClick={props.handleLike}>👎︎</Button> : <Button id={props.id} data-likes={props.likes} data-liked={props.liked} onClick={props.handleLike}>👍</Button>)
-
+              (props.liked ? <Button id={props.id} data-likes={props.likes} data-liked={props.liked} onClick={props.handleLike}>{props.likes} 👎</Button> : <Button id={props.id} data-likes={props.likes} data-liked={props.liked} onClick={props.handleLike}>{props.likes} 👍</Button>)
             : null 
-
           }
 
 

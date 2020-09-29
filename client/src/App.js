@@ -30,7 +30,7 @@ const App = () => {
 
   const logOut = () => {
     localStorage.removeItem('user')
-   window.location = '/login'
+    window.location = '/login'
   }
 
   const [imageState, setImageState] = useState({
@@ -38,69 +38,53 @@ const App = () => {
   })
 
   useEffect(() => {
-    axios.get('/api/users', 
-     {
-      headers: {
-        Authorization: `Bearer ${localStorage.getItem('user')}`
-      }
-    })
-     .then(({data}) => {
-       console.log(data)
-       setImageState({ ...imageState, image: `data:image/png;base64, ${data.img.data}` } )
-     })
-     .catch(err => console.log(err))
+    axios.get('/api/users',
+      {
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem('user')}`
+        }
+      })
+      .then(({ data }) => {
+        console.log(data)
+        setImageState({ ...imageState, image: `data:image/png;base64, ${data.img.data}` })
+      })
+      .catch(err => console.log(err))
 
-  },[])
+  }, [])
 
 
-return (
-  
-  <Router>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet"></link>
+  return (
+
+    <Router>
+      <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet"></link>
       <div>
         <Navbar color="gainsboro" light expand="md">
-          <NavbarToggler onClick={toggle} />
+          <NavbarToggler className="white" onClick={toggle} />
           <Collapse isOpen={isOpen} navbar>
             <Nav className="mr-auto" navbar>
-  <NavbarBrand>
-  {/* <img
-        src={logo}
-        width="50"
-        height="50"
-        className="d-inline-block align-top"
-        alt="React Bootstrap logo"
-        to="/"
-        class="center1"
-        
-      /> */}
-  </NavbarBrand>
-  <img
-        src={logo}
-        width="50"
-        height="50"
-        className="d-inline-block align-top"
-        alt="React Bootstrap logo"
-        to="/"
-        
-      />
-              
+              <img
+                src={logo}
+                width="50"
+                height="50"
+                className="d-inline-block align-top"
+                alt="React Bootstrap logo"
+                to="/"
+
+              />
+
               <NavItem className="justify-content-end">
                 <NavLink><Link to="/">Home</Link></NavLink>
               </NavItem>
               <NavItem>
                 <NavLink><Link to="/login">Login/Signup</Link></NavLink>
               </NavItem>
-              <NavItem>
-                <Button onClick={logOut}>Logout</Button>
-              </NavItem>
-              
-                <NavItem>
-                <img className="profilePhoto" src={imageState.image}/>
-                </NavItem>
-              
 
             </Nav>
           </Collapse>
+            
+            <Button className="float-right" onClick={logOut}>Logout</Button>
+            <img className="profilePhoto" src={imageState.image} />
+            
         </Navbar>
         <Switch>
           <Route exact path="/" component={Home} />
@@ -109,7 +93,7 @@ return (
           <Route path="/api/users/register" component={Login} />
         </Switch>
       </div>
-      <ToastContainer limit={1}/>
+      <ToastContainer limit={1} />
     </Router>
 
 
