@@ -4,13 +4,16 @@ import {
     CardTitle, CardSubtitle, Button
 } from 'reactstrap'
 import { Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap'
-import { Form, FormGroup, Label, Input, FormText } from 'reactstrap'
+import { Form, FormGroup, Label, Input, FormText, Row, Col } from 'reactstrap'
 import axios from 'axios'
 import { set } from 'mongoose'
 import Comment from '../Comment'
+import Moment from 'react-moment';
 import {
-    useParams
+    useParams,
+    Link
 } from 'react-router-dom'
+import './Threadpost.css'
 
 
 
@@ -78,19 +81,41 @@ const Threadpost = props => {
 
     return (
         <>
-            <div>
+            <div id="threadPost">
                 <Card className="w-full">
                     {/* <CardImg top width="100%" src="/assets/318x180.svg" alt="Card image cap" /> */}
                     <CardBody>
+            <CardSubtitle><h1>{props.title}</h1></CardSubtitle>
+            <CardText>{props.text}</CardText>
+            <CardSubtitle>👍 {props.likes}</CardSubtitle>
+
+            <CardText><a target='_blank' href={props.link}>{props.link}</a></CardText>
+            <Row id="small" className="text-center">
+              <Col>
+                <CardTitle>Post by: {props.username}</CardTitle>
+              </Col>
+              <Col>
+                <CardText>{props.commentNum} comments</CardText>
+              </Col>
+              <Col>
+                <CardText>Posted on: <Moment format="MM/DD/YY h:mm a">{props.date}</Moment></CardText>
+              </Col>
+            
+            </Row>
+          </CardBody>
+                    
+                    
+                    {/* <CardBody>
                         <CardTitle>Post by: {props.username}</CardTitle>
                         <CardSubtitle>👍 {props.likes}</CardSubtitle>
                         <CardSubtitle>Title: {props.title}</CardSubtitle>
                         <CardText>{props.text}</CardText>
                         <CardText><a target="_blank" href={props.postLink}>{props.postLink}</a></CardText>
                         <CardText>{props.commentNum} Comments</CardText>
-                    </CardBody>
+                    </CardBody> */}
 
                 </Card>
+                <br />
                 {localStorage.getItem('user')  ? 
                 <Button color="danger" onClick={toggle2}>Add Comment</Button>
                 : null
@@ -115,11 +140,11 @@ const Threadpost = props => {
                                     onChange={commentState.handleInputChange}
                                 />
                             </FormGroup>
-                            <Button id={props.id} color="primary" onClick={commentState.handleComment}>Add Comment</Button>
+                            <Button className='grad' id={props.id} onClick={commentState.handleComment}>Add Comment</Button>
                         </Form>
                     </ModalBody>
                     <ModalFooter>
-                        <Button color="secondary" onClick={toggle2}>Cancel</Button>
+                        <Button className='grad' onClick={toggle2}>Cancel</Button>
                     </ModalFooter>
                 </Modal>
 

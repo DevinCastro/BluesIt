@@ -22,47 +22,81 @@ const Post = props => {
     id: ''
   })
 
-
   return (
     <>
       <div className="post-body">
         <Card className="w-full card main-body">
           {/* <CardImg top width="100%" src="/assets/318x180.svg" alt="Card image cap" /> */}
-          <CardBody>
-            <CardSubtitle><h1>{props.title}</h1></CardSubtitle>
+          <CardBody >
+            <CardSubtitle ><h1>{props.title}</h1></CardSubtitle>
             {/* <CardText>{props.text}</CardText> */}
-            <CardText><a target='_blank' href={props.link}>{props.link}</a></CardText>
-            <Row id="small" className="text-center">
-              <Col>
-                <CardTitle>Post by: {props.username}</CardTitle>
+            <CardText ><a target='_blank' href={props.link}>{props.link}</a></CardText>
+            <Row  id="small" className="text-center">
+              <Col className='left'>
+                <CardTitle  >Post by: {props.username}</CardTitle>
               </Col>
-              <Col>
-                <CardText>{props.commentNum} comments</CardText>
+              <Col className='left'>
+                <CardText >{props.commentNum} comments</CardText>
               </Col>
-              <Col>
-                <CardText>Posted on: <Moment format="MM/DD/YY h:mm a">{props.date}</Moment></CardText>
+              <Col className='left'>
+                <CardText >Posted on: <Moment format="MM/DD/YY h:mm a">{props.date}</Moment></CardText>
               </Col>
             </Row>
 
             <div className="text-center">
               { localStorage.getItem('user') ?
-                  (props.liked ? <Button className="likeMe" id={props.id} data-likes={props.likes} data-liked={props.liked} onClick={props.handleLike}>{props.likes} 👎</Button> : <Button className="likeMe" id={props.id} data-likes={props.likes} data-liked={props.liked} onClick={props.handleLike}>{props.likes} 👍</Button>)
+                  (props.liked ? <Button className="likeMe grad" id={props.id} data-likes={props.likes} data-liked={props.liked} onClick={props.handleLike}>{props.likes} 👎</Button> : <Button className="likeMe grad" id={props.id} data-likes={props.likes} data-liked={props.liked} onClick={props.handleLike}>{props.likes} 👍</Button>)
                 : null 
               }
 
               {"            "}
   
-              <Link to={`/thread/${props.id}`}><Button className="likeMe" id={props.id}>View Thread</Button></Link>
+              <Link to={`/thread/${props.id}`}><Button className="likeMe grad" id={props.id}>View Thread</Button></Link>
             </div>
           </CardBody>
         </Card>
       </div>
-
       
     </>
-  )}
+  )
+        }
 
-  export default Post
+        export default Post
+//   return (
+//     <>
+//       <div className="post-body">
+//         <Card className="w-full main-body">
+//           <Card className="w-full main-body">
+//             <CardSubtitle id="title"> {props.title}</CardSubtitle>
+//             <CardText id="text">{props.text}</CardText>
+//             <CardText><a target='_blank' href={props.link}>{props.link}</a></CardText>
+//             <Row>
+//               <Col xs="4"><CardText id="user">Post by: {props.username}</CardText></Col>
+//               <Col xs="4"><CardText id="comments">{props.commentNum} comments</CardText></Col>
+//              <Col xs="4"><CardText id="time">Posted on: <Moment format="MM/DD/YY h:mm a">{props.date}</Moment> </CardText></Col> 
+//             </Row>
+//             <div className="button-group">
+//               {localStorage.getItem('user') ?
+
+
+//                 (props.liked ? <Button className="likebutton" id={props.id} data-likes={props.likes} data-liked={props.liked} onClick={props.handleLike}>👎︎ {props.likes}</Button> : <Button id={props.id} data-likes={props.likes} className="likebutton" data-liked={props.liked} onClick={props.handleLike}>👍 {props.likes}</Button>)
+
+//                 : null
+
+//               }
+
+//               <Link to={`/thread/${props.id}`}><Button className="threadbutton" id={props.id}>View Thread</Button></Link>
+//             </div>
+//           </Card >
+//         </Card >
+//       </div>
+
+
+//     </>
+//   )
+// }
+
+// export default Post
 
 
 
@@ -73,7 +107,7 @@ const Post = props => {
 //   //   console.log(event.target.id)
 
 //   //   let likes = parseInt(event.target.dataset.likes) + (props.liked ? -1 : 1) 
-   
+
 //   //   axios.put(`/api/posts/${event.target.id}`, {
 //   //     likes: parseInt(event.target.dataset.likes) + 1
 //   //   }, {
@@ -125,7 +159,7 @@ const Post = props => {
 
 
 
-  
+
   // const postBox = (props) => {
   //   return(
   //     <div className="post-body">
@@ -133,14 +167,14 @@ const Post = props => {
   //     </div>
   //   )
   // }
-  
+
   // const Image = (props) => {
   //   return(
   //     <img src={props.image} alt="Logo" className="picture">
   //     </img>
   //   )
   // }
-  
+
   // const Handle = (props) => {
   //   return(
   //     <div className="handle">
@@ -148,7 +182,7 @@ const Post = props => {
   //     </div>
   //   )
   // }
-  
+
   // const Name = (props) => {
   //   return(
   //     <div className="name">
@@ -156,7 +190,7 @@ const Post = props => {
   //     </div>
   //   )
   // }
-  
+
   // const post = (props) => {
   //   return(
   //     <div className="post">
@@ -164,7 +198,7 @@ const Post = props => {
   //     </div>
   //   )
   // }
-  
+
   // const postBody = (props) => {
   //   return(
   //     <postBox>
@@ -181,7 +215,7 @@ const Post = props => {
   //     </postBox>
   //   )
   // }
-  
+
   // export default { postBody }
 
 

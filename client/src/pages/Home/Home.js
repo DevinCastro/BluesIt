@@ -3,7 +3,8 @@ import React, { useEffect, useState } from 'react'
 import { Button, Container, Row, Col } from 'reactstrap';
 import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
 import { Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
-import { Form, FormGroup, Label, Input, FormText } from 'reactstrap';
+import { Form, FormGroup, Label, Input, FormText, CustomInput } from 'reactstrap';
+
 import {
   BrowserRouter as Router,
   Switch,
@@ -189,13 +190,13 @@ const Home = () => {
             <Row className="text-center">
               <Col xs="4"> 
                 <Dropdown isOpen={dropdownOpen} toggle={toggle}>
-                  <DropdownToggle caret>
+                  <DropdownToggle caret className='grad'>
                     Sort By
-                  </DropdownToggle>
+                  </DropdownToggle >
                   <DropdownMenu className="black solidBorder">
-                    <DropdownItem className="black"><Button className="dropDown" onClick={postState.handleLikeSort}>Most Liked</Button></DropdownItem>
-                    <DropdownItem className="black"><Button className="dropDown" onClick={postState.handleRecentSort}>Most Recent</Button></DropdownItem>
-                    <DropdownItem className="black"><Button className="dropDown" onClick={postState.handleCommentSort}>Most Comments</Button></DropdownItem>
+                    <DropdownItem className="black"><Button className="dropDown gradd" onClick={postState.handleLikeSort}>Most Liked</Button></DropdownItem>
+                    <DropdownItem className="black"><Button className="dropDown gradd" onClick={postState.handleRecentSort}>Most Recent</Button></DropdownItem>
+                    <DropdownItem className="black"><Button className="dropDown gradd" onClick={postState.handleCommentSort}>Most Comments</Button></DropdownItem>
                   </DropdownMenu>
                 </Dropdown>
               </Col>
@@ -232,11 +233,11 @@ const Home = () => {
                             onChange={postState.handleInputChange}
                           />
                         </FormGroup>
-                        <Button color="primary" onClick={postState.handlePost}>Post</Button>
+                        <Button className='grad' onClick={postState.handlePost}>Post</Button>
                       </Form>
                     </ModalBody>
                     <ModalFooter>
-                      <Button color="secondary" onClick={toggle2}>Cancel</Button>
+                      <Button className='grad' onClick={toggle2}>Cancel</Button>
                     </ModalFooter>
                   </Modal>
                 </div>
@@ -260,10 +261,10 @@ const Home = () => {
           </Col>
           
         </Row>
-        <hr className="white"></hr>
-        <Row>
+        {/* <hr className="white"></hr> */}
+        <Row  id="border">
           <Col xs="9">
-            
+            <div className="please"> 
               {
                 postState.posts.length > 0 ? (
                   postState.posts.map(post => (
@@ -286,7 +287,7 @@ const Home = () => {
                   ))
                 ) : null
               }
-            
+            </div>
           </Col>
           <Col xs='3'>
             <h1>Tabs</h1>
@@ -310,6 +311,8 @@ const Home = () => {
           </Col>
         </Row>
       </div>
+
+         
     </>
   )
 }

@@ -3,7 +3,7 @@
 }
 
 .please {
-  width: 60%;
+  width: 100%;
 }
 
 #frontLogo {
@@ -11,6 +11,7 @@
     text-align: center;
     color: #0470db;
     animation: glow 5s ease-in-out infinite alternate;
+    /* height: 150x; */
   }
   @keyframes glow {
     from {
@@ -34,13 +35,28 @@
   background-color: black !important;
 }
 
-.solidBorder {
+/* .solidBorder {
   border: 1px white solid !important;
-}
+} */
 
 #textBox {
   height: 15px;
   width: 250px;
   margin-left: auto;
   margin-right: auto;
+}
+
+#border {
+    border: none;
+}
+.grad {
+  
+  background-color: black;
+  background-image: linear-gradient( black, darkblue);
+}
+
+.gradd {
+  
+  background-color: lightblue;
+  background-image: linear-gradient( lightblue, darkblue);
 }
