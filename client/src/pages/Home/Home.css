@@ -11,6 +11,7 @@
     text-align: center;
     color: #0470db;
     animation: glow 5s ease-in-out infinite alternate;
+    /* height: 150x; */
   }
   @keyframes glow {
     from {
