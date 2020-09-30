@@ -4,7 +4,8 @@
   background-color: black;
   text-decoration: none;
   font-weight: lighter;
-  font-family: Source Sans Pro;
+ /* font-family: proxima_nova; */
+ font-family: Proxima_nova;
   color: white;
 }
 
@@ -24,6 +25,8 @@
 
 .font {
   font-family: 'Montserrat', sans-serif;
+  /* font-family: "Helvetica Neue",Arial,sans-serif; */
+
 }
 
 .logout {
