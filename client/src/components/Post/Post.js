@@ -32,7 +32,7 @@ const Post = props => {
             <CardSubtitle><h1>{props.title}</h1></CardSubtitle>
             {/* <CardText>{props.text}</CardText> */}
             <CardText><a target='_blank' href={props.link}>{props.link}</a></CardText>
-            <Row id="small">
+            <Row id="small" className="text-center">
               <Col>
                 <CardTitle>Post by: {props.username}</CardTitle>
               </Col>

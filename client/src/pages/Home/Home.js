@@ -216,13 +216,26 @@ const Home = () => {
                   </Modal>
                 </div>
               </Col>
-              <Col xs="4">Search</Col>
+              <Col xs="4">
+              <Form>
+                <FormGroup>
+                  <Label for="exampleText">Search</Label>
+                  <Input 
+                    id="textBox"
+                    // type="text"
+                    // name="title"
+                    // value={postState.title}
+                    // onChange={postState.handleInputChange}
+                  />
+                </FormGroup>
+              </Form>
+              </Col>
             </Row>
           </Col>
         </Row>
         <hr className="white"></hr>
         <Row className="card">
-          <Col>
+          <Col xs="12">
             <div className="please"> 
               {
                 postState.posts.length > 0 ? (

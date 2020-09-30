@@ -23,7 +23,6 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import axios from 'axios'
 
-
 const App = () => {
   const [isOpen, setIsOpen] = useState(false);
   const toggle = () => setIsOpen(!isOpen);
@@ -71,7 +70,7 @@ const App = () => {
                 to="/"
               />
               <NavItem className="justify-content-end">
-                <NavLink><Link to="/">Home</Link></NavLink>
+                <NavLink activeClassName="navLink"><Link to="/">Home</Link></NavLink>
               </NavItem>
               <NavItem>
                 <NavLink><Link to="/login">Login/Signup</Link></NavLink>
@@ -79,7 +78,11 @@ const App = () => {
             </Nav>
           </Collapse>
             <div>
-              <img className="profilePhoto float-right" src={imageState.image} />
+              {
+                imageState.image ? 
+                <img className="profilePhoto float-right" src={imageState.image} />
+                : null
+              }
               <Button className="float-right logout" onClick={logOut}>Logout</Button>
             </div>
         </Navbar>
