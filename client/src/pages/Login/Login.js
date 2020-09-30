@@ -29,7 +29,7 @@ const Login = () => {
 
     // const formData = new FormData()
     // formData.append("img", registerState.image)
-    
+
 
     // axios.post('/api/users/register', {
     //   name: registerState.name,
@@ -41,16 +41,16 @@ const Login = () => {
     // })
     // .then(() => {
     //   // console.log('Registered!')
-      // setRegisterState({ ...registerState, name: '', email: '', username: '', password: '' })
-      toast.success('Account Created!', {
-        position: "bottom-right",
-        autoClose: 3000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        });
+    // setRegisterState({ ...registerState, name: '', email: '', username: '', password: '' })
+    toast.success('Account Created!', {
+      position: "bottom-right",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
     // })
     // .catch(err => console.log(err))
   }
@@ -67,76 +67,94 @@ const Login = () => {
       username: registerState.lUsername,
       password: registerState.lPassword
     })
-    .then(({ data: token }) => {
-      if (token) {
-        localStorage.setItem('user', token)
-        window.location = '/'
-        // console.log('it works!')
-        // toast('Yes')
-      } else {
-        toast.error('Incorrect Credentials', {
-          position: "bottom-right",
-          autoClose: 3000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
+      .then(({ data: token }) => {
+        if (token) {
+          localStorage.setItem('user', token)
+          window.location = '/'
+          // console.log('it works!')
+          // toast('Yes')
+        } else {
+          toast.error('Incorrect Credentials', {
+            position: "bottom-right",
+            autoClose: 3000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
           });
-      }
-    })
+        }
+      })
   }
 
   return (
     <>
 
-<iframe name='hidden-frame'></iframe>
-<h1>Sign Up Page</h1>
-      <form target='hidden-frame' action='/api/users/register' method='POST' encType="multipart/form-data"> 
-        <p>
+      <iframe name='hidden-frame'></iframe>
+      <h1>Sign Up Page</h1>
+      <form target='hidden-frame' action='/api/users/register' method='POST' encType="multipart/form-data">
+        <div className="form-group">
           <label htmlFor="name">Name</label>
           <input type="text"
-          name="name" 
+            name="name"
+          // value={registerState.name}
+          // onChange={registerState.handleInputChange} 
+          />
+        </div>
+        <p>
+          <label className="touch" htmlFor="name">Name</label>
+        </p>
+        <p>
+          <input type="text"
+            name="name"
+            placeholder="Enter Name"
           // value={registerState.name}
           // onChange={registerState.handleInputChange} 
           />
         </p>
         <p>
           <label htmlFor="email">Email</label>
+        </p>
+        <p>
           <input type="email"
-          name="email" 
+            name="email"
           // value={registerState.email}
           // onChange={registerState.handleInputChange}
           />
         </p>
         <p>
           <label htmlFor="username">Username</label>
+        </p>
+        <p>
           <input type="text"
-          name="username" 
+            name="username"
           // value={registerState.username}
           // onChange={registerState.handleInputChange}
           />
         </p>
         <p>
-          <label htmlFor="password">Password</label>
+        <label htmlFor="password">Password</label>
+        </p>
+        <p>
           <input type="password"
-          name="password" 
+            name="password"
           // value={registerState.password}
           // onChange={registerState.handleInputChange}
           />
         </p>
         <p>
-          <label for="exampleCustomFileBrowser">File Browser</label>
-          <input 
-          type="file" 
-          name="image"
+          <label for="exampleCustomFileBrowser"> File Browser </label>
+          <input
+            className="fileBrowser"
+            type="file"
+            name="image"
           // value={registerState.image}
           // onChange={registerState.handleFile}  
           />
         </p>
-            
+
         <p>
-          <button 
+          <button
           // onClick={registerState.handleRegister}
           >Submit</button>
           <ToastContainer />
@@ -210,7 +228,7 @@ const Login = () => {
 
 
 
-      
+
 
       {/* <h1 className='center'>Sign Up Page</h1> */}
       {/* <form className='form container-fluid center'>
@@ -245,63 +263,63 @@ const Login = () => {
         <p>
           <button onClick={registerState.handleRegister}>Submit</button>
           {/* <ToastContainer /> */}
-        {/* </p>
+      {/* </p>
       </form> */}
 
-    
+
 
       <h1>Login</h1>
 
       <form>
         <p>
           <label htmlFor="lUsername">Username</label>
-          <input  className= 'input' type="text"
-          name="lUsername" 
-          value={registerState.lUsername}
-          onChange={registerState.handleInputChange} />
+          <input className='input' type="text"
+            name="lUsername"
+            value={registerState.lUsername}
+            onChange={registerState.handleInputChange} />
         </p>
         <p>
           <label htmlFor="lPassword">Password</label>
-          <input  className= 'input' type="password"
-          name="lPassword" 
-          value={registerState.lPassword}
-          onChange={registerState.handleInputChange} />
+          <input className='input' type="password"
+            name="lPassword"
+            value={registerState.lPassword}
+            onChange={registerState.handleInputChange} />
         </p>
         <p>
           <button onClick={registerState.handleLogin}>Login</button>
         </p>
-      </form> 
+      </form>
 
-      
-<div className="padding">
-      <form className='form container-fluid center padding'>
-                <h3>Sign In</h3>
 
-                <div className="form-group">
-                    <label>Username</label>
-                    <input type="username" className="form-control input" placeholder="Enter username" />
-                </div>
+      <div className="padding">
+        <form className='form container-fluid center padding'>
+          <h3>Sign In</h3>
 
-                <div className="form-group">
-                    <label>Password</label>
-                    <input type="password" className="form-control" placeholder="Enter password" />
-                </div>
+          <div className="form-group">
+            <label>Username</label>
+            <input type="username" className="form-control input" placeholder="Enter username" />
+          </div>
 
-                <div className="form-group">
-                    <div className="custom-control custom-checkbox">
-                        <input type="checkbox" className="custom-control-input input" id="customCheck1" />
-                        <label className="custom-control-label" htmlFor="customCheck1">Remember me</label>
-                    </div>
-                </div>
+          <div className="form-group">
+            <label>Password</label>
+            <input type="password" className="form-control" placeholder="Enter password" />
+          </div>
 
-                <button type="submit" className="btn btn-primary btn-block">Submit</button>
-                <p className="forgot-password text-right">
-                    Forgot <a href="#">password?</a>
-                </p>
-            </form>
-        
+          <div className="form-group">
+            <div className="custom-control custom-checkbox">
+              <input type="checkbox" className="custom-control-input input" id="customCheck1" />
+              <label className="custom-control-label" htmlFor="customCheck1">Remember me</label>
             </div>
-           
+          </div>
+
+          <button type="submit" className="btn btn-primary btn-block">Submit</button>
+          <p className="forgot-password text-right">
+            Forgot <a href="#">password?</a>
+          </p>
+        </form>
+
+      </div>
+
     </>
   )
 }

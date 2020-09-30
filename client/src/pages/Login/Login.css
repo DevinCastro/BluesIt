@@ -76,4 +76,7 @@ body, html, #root, .app, .container {
 
 
   
+  .touch {
+    margin: 0rem;
+  }
 
