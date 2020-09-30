@@ -53,4 +53,7 @@ body, html, #root, .app, .container {
       padding-right: 150px;
   }
   
+  .touch {
+    margin: 0rem;
+  }
 
