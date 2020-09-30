@@ -3,7 +3,7 @@
 }
 
 .please {
-  width: 60%;
+  width: 100%;
 }
 
 #frontLogo {
@@ -35,13 +35,17 @@
   background-color: black !important;
 }
 
-.solidBorder {
+/* .solidBorder {
   border: 1px white solid !important;
-}
+} */
 
 #textBox {
   height: 15px;
   width: 250px;
   margin-left: auto;
   margin-right: auto;
+}
+
+#border {
+    border: none;
 }

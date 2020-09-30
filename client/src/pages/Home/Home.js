@@ -234,9 +234,9 @@ const Home = () => {
             </Row>
           </Col>
         </Row>
-        <hr className="white"></hr>
-        <Row className="card">
-          <Col xs="12">
+        {/* <hr className="white"></hr> */}
+        <Row  id="border">
+          <Col xs="9">
             <div className="please"> 
               {
                 postState.posts.length > 0 ? (
@@ -262,9 +262,9 @@ const Home = () => {
               }
             </div>
           </Col>
-          {/* <Col xs="3">
+          <Col xs="3">
             <h1>kill me</h1>
-          </Col> */}
+          </Col>  
         </Row>
       </div>
     </>
