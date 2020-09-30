@@ -8,7 +8,8 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { Button, Form, FormGroup, Label, Input, FormText, Container, Row, Col } from 'reactstrap';
 // import './Login.css'
-
+import guitar from '../Login/guitar.png'
+import guitar2 from '../Login/guitar2.png'
 const Login = () => {
 
   const [registerState, setRegisterState] = useState({
@@ -149,9 +150,10 @@ const Login = () => {
           </p>
 
               <p className="text-center">
-            <Button 
+            <Button className="grad"
             // onClick={registerState.handleRegister}
             >Submit</Button>
+            <p><img className="guitarpic" src={guitar} /></p>
             <ToastContainer />
           </p>
         </Form>
@@ -179,14 +181,17 @@ const Login = () => {
               onChange={registerState.handleInputChange} />
           </p>
               <p className="text-center">
-            <Button onClick={registerState.handleLogin}>Login</Button>
+            <Button className="grad" onClick={registerState.handleLogin}>Login</Button>
           </p>
+          <p><img className="guitarpic" src={guitar2} /></p>
         </Form>
         
           </Col>
         <iframe className="hide" name='hidden-frame'></iframe>
         </Row>
       </Container>
+
+      
 
       {/* <div className="padding">
         <form className='form container-fluid center padding'>

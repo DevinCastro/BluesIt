@@ -45,6 +45,7 @@
   margin-right: auto;
 }
 
+<<<<<<< HEAD
 .please {
   width: 60%;
   margin-left: 0rem;
@@ -52,4 +53,16 @@
 
 .white {
   border: white;
+=======
+.grad {
+  
+  background-color: black;
+  background-image: linear-gradient( black, darkblue);
+}
+
+.gradd {
+  
+  background-color: lightblue;
+  background-image: linear-gradient( lightblue, darkblue);
+>>>>>>> d1ba66c79a015e75399a4e3c27ea324f16145b16
 }
