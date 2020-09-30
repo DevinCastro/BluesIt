@@ -16,6 +16,7 @@ import Moment from 'react-moment'
 import './Home.css'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import Song from '../../components/Song'
 
 
 
@@ -29,6 +30,29 @@ const Home = () => {
 
   const toggle2 = () => setModal(!modal);
 
+  const [songState, setSongState] = useState({
+    song: '',
+    songs: []
+  })
+
+  songState.handleInputChange = event => {
+    setSongState({ ...songState, [event.target.name]: event.target.value })
+  }
+
+  songState.handleSearch = event => {
+    event.preventDefault()
+    
+    axios.get(`https://www.songsterr.com/a/ra/songs.json?pattern=${songState.song}`)
+      .then(({ data }) => {
+        console.log(data.slice(0, 5))
+
+        setSongState({ ...songState, songs: data.slice(0, 5) })
+
+      })
+      .catch(err => console.log(err))
+
+  }
+
 
   const [postState, setPostState] = useState({
     text: '',
@@ -36,6 +60,7 @@ const Home = () => {
     link: '',
     posts: []
   })
+
 
   postState.handleInputChange = event => {
     setPostState({ ...postState, [event.target.name]: event.target.value })
@@ -219,24 +244,26 @@ const Home = () => {
               <Col xs="4">
               <Form>
                 <FormGroup>
-                  <Label for="exampleText">Search</Label>
+                  <Label for="exampleText">Search for Tabs</Label>
                   <Input 
                     id="textBox"
-                    // type="text"
-                    // name="title"
-                    // value={postState.title}
-                    // onChange={postState.handleInputChange}
+                    type="text"
+                    name="song"
+                    value={songState.song}
+                    onChange={songState.handleInputChange}
                   />
                 </FormGroup>
+                <Button onClick={songState.handleSearch}>Search</Button>
               </Form>
               </Col>
             </Row>
           </Col>
+          
         </Row>
         <hr className="white"></hr>
-        <Row className="card">
-          <Col xs="12">
-            <div className="please"> 
+        <Row>
+          <Col xs="9">
+            
               {
                 postState.posts.length > 0 ? (
                   postState.posts.map(post => (
@@ -259,11 +286,28 @@ const Home = () => {
                   ))
                 ) : null
               }
-            </div>
+            
           </Col>
-          {/* <Col xs="3">
-            <h1>kill me</h1>
-          </Col> */}
+          <Col xs='3'>
+            <h1>Tabs</h1>
+
+            {
+              songState.songs.length > 0 ? (
+                songState.songs.map(song => (
+                  <div key={song._id}>
+                 
+                    <Song 
+                      name={song.title}
+                      artist={song.artist.name}
+                      id={song.id}
+                    />
+  
+                  </div>
+                ))
+              ) : null
+            }
+
+          </Col>
         </Row>
       </div>
     </>
