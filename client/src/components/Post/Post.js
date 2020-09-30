@@ -27,31 +27,31 @@ const Post = props => {
       <div className="post-body">
         <Card className="w-full card main-body">
           {/* <CardImg top width="100%" src="/assets/318x180.svg" alt="Card image cap" /> */}
-          <CardBody>
-            <CardSubtitle><h1>{props.title}</h1></CardSubtitle>
+          <CardBody >
+            <CardSubtitle ><h1>{props.title}</h1></CardSubtitle>
             {/* <CardText>{props.text}</CardText> */}
-            <CardText><a target='_blank' href={props.link}>{props.link}</a></CardText>
-            <Row id="small" className="text-center">
-              <Col>
-                <CardTitle>Post by: {props.username}</CardTitle>
+            <CardText ><a target='_blank' href={props.link}>{props.link}</a></CardText>
+            <Row  id="small" className="text-center">
+              <Col className='left'>
+                <CardTitle  >Post by: {props.username}</CardTitle>
               </Col>
-              <Col>
-                <CardText>{props.commentNum} comments</CardText>
+              <Col className='left'>
+                <CardText >{props.commentNum} comments</CardText>
               </Col>
-              <Col>
-                <CardText>Posted on: <Moment format="MM/DD/YY h:mm a">{props.date}</Moment></CardText>
+              <Col className='left'>
+                <CardText >Posted on: <Moment format="MM/DD/YY h:mm a">{props.date}</Moment></CardText>
               </Col>
             </Row>
 
             <div className="text-center">
               { localStorage.getItem('user') ?
-                  (props.liked ? <Button className="likeMe" id={props.id} data-likes={props.likes} data-liked={props.liked} onClick={props.handleLike}>{props.likes} 👎</Button> : <Button className="likeMe" id={props.id} data-likes={props.likes} data-liked={props.liked} onClick={props.handleLike}>{props.likes} 👍</Button>)
+                  (props.liked ? <Button className="likeMe grad" id={props.id} data-likes={props.likes} data-liked={props.liked} onClick={props.handleLike}>{props.likes} 👎</Button> : <Button className="likeMe grad" id={props.id} data-likes={props.likes} data-liked={props.liked} onClick={props.handleLike}>{props.likes} 👍</Button>)
                 : null 
               }
 
               {"            "}
   
-              <Link to={`/thread/${props.id}`}><Button className="likeMe" id={props.id}>View Thread</Button></Link>
+              <Link to={`/thread/${props.id}`}><Button className="likeMe grad" id={props.id}>View Thread</Button></Link>
             </div>
           </CardBody>
         </Card>

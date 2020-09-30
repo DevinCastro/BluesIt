@@ -165,13 +165,13 @@ const Home = () => {
             <Row className="text-center">
               <Col xs="4"> 
                 <Dropdown isOpen={dropdownOpen} toggle={toggle}>
-                  <DropdownToggle caret>
+                  <DropdownToggle caret className='grad'>
                     Sort By
-                  </DropdownToggle>
+                  </DropdownToggle >
                   <DropdownMenu className="black solidBorder">
-                    <DropdownItem className="black"><Button className="dropDown" onClick={postState.handleLikeSort}>Most Liked</Button></DropdownItem>
-                    <DropdownItem className="black"><Button className="dropDown" onClick={postState.handleRecentSort}>Most Recent</Button></DropdownItem>
-                    <DropdownItem className="black"><Button className="dropDown" onClick={postState.handleCommentSort}>Most Comments</Button></DropdownItem>
+                    <DropdownItem className="black"><Button className="dropDown gradd" onClick={postState.handleLikeSort}>Most Liked</Button></DropdownItem>
+                    <DropdownItem className="black"><Button className="dropDown gradd" onClick={postState.handleRecentSort}>Most Recent</Button></DropdownItem>
+                    <DropdownItem className="black"><Button className="dropDown gradd" onClick={postState.handleCommentSort}>Most Comments</Button></DropdownItem>
                   </DropdownMenu>
                 </Dropdown>
               </Col>
@@ -208,11 +208,11 @@ const Home = () => {
                             onChange={postState.handleInputChange}
                           />
                         </FormGroup>
-                        <Button color="primary" onClick={postState.handlePost}>Post</Button>
+                        <Button className='grad' onClick={postState.handlePost}>Post</Button>
                       </Form>
                     </ModalBody>
                     <ModalFooter>
-                      <Button color="secondary" onClick={toggle2}>Cancel</Button>
+                      <Button className='grad' onClick={toggle2}>Cancel</Button>
                     </ModalFooter>
                   </Modal>
                 </div>

@@ -140,11 +140,11 @@ const Threadpost = props => {
                                     onChange={commentState.handleInputChange}
                                 />
                             </FormGroup>
-                            <Button id={props.id} color="primary" onClick={commentState.handleComment}>Add Comment</Button>
+                            <Button className='grad' id={props.id} onClick={commentState.handleComment}>Add Comment</Button>
                         </Form>
                     </ModalBody>
                     <ModalFooter>
-                        <Button color="secondary" onClick={toggle2}>Cancel</Button>
+                        <Button className='grad' onClick={toggle2}>Cancel</Button>
                     </ModalFooter>
                 </Modal>
 

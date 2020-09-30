@@ -49,3 +49,14 @@
 #border {
     border: none;
 }
+.grad {
+  
+  background-color: black;
+  background-image: linear-gradient( black, darkblue);
+}
+
+.gradd {
+  
+  background-color: lightblue;
+  background-image: linear-gradient( lightblue, darkblue);
+}

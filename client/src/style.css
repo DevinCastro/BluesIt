@@ -1,7 +1,7 @@
 
 
 * {
-  background-color: rgb(14, 13, 13);
+  background-color: black;
   text-decoration: none;
   font-weight: lighter;
   font-family: Source Sans Pro;
@@ -74,3 +74,10 @@
 .hide {
   display: none !important;
 }
+
+.guitarpic {
+  width: 100%;
+  height: auto;
+}
+
+
