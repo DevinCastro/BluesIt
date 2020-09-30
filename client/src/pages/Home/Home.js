@@ -234,7 +234,8 @@ const Home = () => {
           </Col>
         </Row>
         <hr className="white"></hr>
-        <Row className="card">
+        <br></br>
+        <Row id="border" className="card">
           <Col xs="12">
             <div className="please"> 
               {

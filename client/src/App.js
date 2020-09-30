@@ -58,7 +58,7 @@ const App = () => {
       <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet"></link>
       <div>
         <Navbar color="gainsboro" light expand="md">
-          <NavbarToggler className="white" onClick={toggle} />
+          <NavbarToggler className="blue" onClick={toggle} />
           <Collapse isOpen={isOpen} navbar>
             <Nav className="mr-auto" navbar>
               <img
