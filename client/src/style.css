@@ -1,9 +1,9 @@
 * {
-    background-color: rgb(14, 13, 13);
-    text-decoration: none;
-    font-weight: lighter;
-    font-family: Source Sans Pro;
-    color: white;
+  background-color: rgb(14, 13, 13);
+  text-decoration: none;
+  font-weight: lighter;
+  font-family: Source Sans Pro;
+  color: white;
 }
 
 .white {
@@ -43,7 +43,7 @@
   text-decoration: none;
 }
 
-.logout:hover{
+.logout:hover {
   background-color: black;
   color: #034e99;
 }
@@ -76,4 +76,10 @@
   color: red;
 }
 
+.test {
+  color: white !important;
+}
 
+.hide {
+  display: none !important;
+}
