@@ -6,6 +6,7 @@ import axios from 'axios'
 import { Toast, ToastBody, ToastHeader } from 'reactstrap';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import './Login.css'
 
 const Login = () => {
 
@@ -549,161 +550,161 @@ export default Login
 
       
 
-//       {/* <h1 className='center'>Sign Up Page</h1> */}
-//       {/* <form className='form container-fluid center'>
-//         <p>
-//           <label htmlFor="name">Name</label>
-//           <input  className= 'input'type="text"
-//           name="name" 
-//           value={registerState.name}
-//           onChange={registerState.handleInputChange} />
-//         </p>
-//         <p>
-//           <label htmlFor="email">Email</label>
-//           <input className= 'input' type="email"
-//           name="email" 
-//           value={registerState.email}
-//           onChange={registerState.handleInputChange}/>
-//         </p>
-//         <p>
-//           <label htmlFor="username">Username</label>
-//           <input className= 'input' type="text"
-//           name="username" 
-//           value={registerState.username}
-//           onChange={registerState.handleInputChange}/>
-//         </p>
-//         <p>
-//           <label htmlFor="password">Password</label>
-//           <input className= 'input' type="password"
-//           name="password" 
-//           value={registerState.password}
-//           onChange={registerState.handleInputChange}/>
-//         </p>
-//         <p>
-//           <button onClick={registerState.handleRegister}>Submit</button>
-//           {/* <ToastContainer /> */}
-//         {/* </p>
-//       </form> */}
+      {/* <h1 className='center'>Sign Up Page</h1> */}
+      {/* <form className='form container-fluid center'>
+        <p>
+          <label htmlFor="name">Name</label>
+          <input  className= 'input'type="text"
+          name="name" 
+          value={registerState.name}
+          onChange={registerState.handleInputChange} />
+        </p>
+        <p>
+          <label htmlFor="email">Email</label>
+          <input className= 'input' type="email"
+          name="email" 
+          value={registerState.email}
+          onChange={registerState.handleInputChange}/>
+        </p>
+        <p>
+          <label htmlFor="username">Username</label>
+          <input className= 'input' type="text"
+          name="username" 
+          value={registerState.username}
+          onChange={registerState.handleInputChange}/>
+        </p>
+        <p>
+          <label htmlFor="password">Password</label>
+          <input className= 'input' type="password"
+          name="password" 
+          value={registerState.password}
+          onChange={registerState.handleInputChange}/>
+        </p>
+        <p>
+          <button onClick={registerState.handleRegister}>Submit</button>
+          {/* <ToastContainer /> 
+      * </p>
+      </form> 
 
     
 
 
-//       <h1>Login</h1>
+      <h1>Login</h1>
 
-//       <form>
-//         <p>
-//           <label htmlFor="lUsername">Username</label>
-//           <input  className= 'input' type="text"
-//           name="lUsername" 
-//           value={registerState.lUsername}
-//           onChange={registerState.handleInputChange} />
-//         </p>
-//         <p>
-//           <label htmlFor="lPassword">Password</label>
-//           <input  className= 'input' type="password"
-//           name="lPassword" 
-//           value={registerState.lPassword}
-//           onChange={registerState.handleInputChange} />
-//         </p>
-//         <p>
-//           <button onClick={registerState.handleLogin}>Login</button>
-//         </p>
-//       </form>  
+      <form>
+        <p>
+          <label htmlFor="lUsername">Username</label>
+          <input  className= 'input' type="text"
+          name="lUsername" 
+          value={registerState.lUsername}
+          onChange={registerState.handleInputChange} />
+        </p>
+        <p>
+          <label htmlFor="lPassword">Password</label>
+          <input  className= 'input' type="password"
+          name="lPassword" 
+          value={registerState.lPassword}
+          onChange={registerState.handleInputChange} />
+        </p>
+        <p>
+          <button onClick={registerState.handleLogin}>Login</button>
+        </p>
+      </form>  
 
-//       <br></br>
+      <br></br>
 
  
-//     <Col className= "col-6 containter-fluid" id="signuparea">
-// <div className="padding">
-//       <form className='form container-fluid center padding'>
-//                 <h3>Sign Up</h3>
+    <Col className= "col-6 containter-fluid" id="signuparea">
+<div className="padding">
+      <form className='form container-fluid center padding'>
+                <h3>Sign Up</h3>
                
 
-//                 <div className="form-group">
-//                     <label>Name</label>
-//                     <input name="email" 
-//                     value={registerState.email}
-//                 onChange={registerState.handleInputChange} 
-//                    type="Name" className="form-control" placeholder="Enter name" />
-//                 </div>
+                <div className="form-group">
+                    <label>Name</label>
+                    <input name="email" 
+                    value={registerState.email}
+                onChange={registerState.handleInputChange} 
+                   type="Name" className="form-control" placeholder="Enter name" />
+                </div>
 
-//                 <div className="form-group">
-//                     <label>Email</label>
-//                     <input name="email" 
-//           value={registerState.email}
-//           onChange={registerState.handleInputChange}
-//           type="email" className="form-control" placeholder="Enter email" />
-//                 </div>
+                <div className="form-group">
+                    <label>Email</label>
+                    <input name="email" 
+          value={registerState.email}
+          onChange={registerState.handleInputChange}
+          type="email" className="form-control" placeholder="Enter email" />
+                </div>
 
-//                 <div className="form-group">
-//                     <label>Username</label>
-//                     <input name="username" 
-//           value={registerState.username}
-//           onChange={registerState.handleInputChange}
-//           className="inputtext" type="username" className="form-control input" placeholder="Enter username" />
-//                 </div>
+                <div className="form-group">
+                    <label>Username</label>
+                    <input name="username" 
+          value={registerState.username}
+          onChange={registerState.handleInputChange}
+          className="inputtext" type="username" className="form-control input" placeholder="Enter username" />
+                </div>
 
-//                 <div className="form-group">
-//                     <label>Password</label>
-//                     <input name="password" 
-//           value={registerState.password}
-//           onChange={registerState.handleInputChange} type="password" className="form-control" placeholder="Enter password" />
-//                 </div>
+                <div className="form-group">
+                    <label>Password</label>
+                    <input name="password" 
+          value={registerState.password}
+          onChange={registerState.handleInputChange} type="password" className="form-control" placeholder="Enter password" />
+                </div>
 
-//                 <div className="form-group">
-//                     <div className="custom-control custom-checkbox">
-//                         <input type="checkbox" className="custom-control-input input" id="customCheck1" />
-//                         <label className="custom-control-label" htmlFor="customCheck1">Remember me</label>
-//                     </div>
-//                 </div>
+                <div className="form-group">
+                    <div className="custom-control custom-checkbox">
+                        <input type="checkbox" className="custom-control-input input" id="customCheck1" />
+                        <label className="custom-control-label" htmlFor="customCheck1">Remember me</label>
+                    </div>
+                </div>
 
-//                 <button onClick={registerState.handleRegister} type="submit" className="btn btn-primary btn-block">Submit</button>
-//                 <ToastContainer />
-//                 {/* <p className="forgot-password text-right">
-//                     Forgot <a href="#">password?</a>
-//                 </p> */}
-//             </form>
+                <button onClick={registerState.handleRegister} type="submit" className="btn btn-primary btn-block">Submit</button>
+                <ToastContainer />
+                {/* <p className="forgot-password text-right">
+                    Forgot <a href="#">password?</a>
+                </p> */}
+      //       </form>
         
-//             </div>
-//             </Col>
+      //       </div>
+      //       </Col>
 
-//             <Col  className= "col-6 container-fluid" id ="loginarea">
+      //       <Col  className= "col-6 container-fluid" id ="loginarea">
 
-//             <div className="padding">
-//       <form className='form container-fluid center padding'>
-//                 <h3>Log In</h3>
+      //       <div className="padding">
+      // <form className='form container-fluid center padding'>
+      //           <h3>Log In</h3>
 
-//                 <div className="form-group">
-//                     <label>Username</label>
-//                     <input name="lUsername" 
-//           value={registerState.lUsername}
-//           onChange={registerState.handleInputChange}
-//           className="inputtext" type="username" className="form-control input" placeholder="Enter username" />
-//                 </div>
+      //           <div className="form-group">
+      //               <label>Username</label>
+      //               <input name="lUsername" 
+      //     value={registerState.lUsername}
+      //     onChange={registerState.handleInputChange}
+      //     className="inputtext" type="username" className="form-control input" placeholder="Enter username" />
+      //           </div>
 
-//                 <div className="form-group">
-//                     <label>Password</label>
-//                     <input name="lPassword" 
-//           value={registerState.lPassword}
-//           onChange={registerState.handleInputChange}
-//           type="password" className="form-control" placeholder="Enter password" />
-//                 </div>
+      //           <div className="form-group">
+      //               <label>Password</label>
+      //               <input name="lPassword" 
+      //     value={registerState.lPassword}
+      //     onChange={registerState.handleInputChange}
+      //     type="password" className="form-control" placeholder="Enter password" />
+      //           </div>
 
-//                 <div className="form-group">
-//                     <div className="custom-control custom-checkbox">
-//                         <input type="checkbox" className="custom-control-input input" id="customCheck1" />
-//                         <label className="custom-control-label" htmlFor="customCheck1">Remember me</label>
-//                     </div>
-//                 </div>
+      //           <div className="form-group">
+      //               <div className="custom-control custom-checkbox">
+      //                   <input type="checkbox" className="custom-control-input input" id="customCheck1" />
+      //                   <label className="custom-control-label" htmlFor="customCheck1">Remember me</label>
+      //               </div>
+      //           </div>
 
-//                 <button type="submit" className="btn btn-primary btn-block">Submit</button>
-//                 <p className="forgot-password text-right">
-//                     Forgot <a href="#">password?</a>
-//                 </p>
-//             </form>
+      //           <button type="submit" className="btn btn-primary btn-block">Submit</button>
+      //           <p className="forgot-password text-right">
+      //               Forgot <a href="#">password?</a>
+      //           </p>
+      //       </form>
         
-//             </div>
-//             </Col>
+      //       </div>
+      //       </Col>
 
 
 
