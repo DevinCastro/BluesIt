@@ -4,7 +4,7 @@
   background-color: black;
   text-decoration: none;
   font-weight: lighter;
-  font-family: Source Sans Pro;
+  font-family: Arvo;
   color: white;
 }
 
@@ -79,5 +79,9 @@
   width: 100%;
   height: auto;
 }
+/* 
+.topNav, collapse, show, navbar-collapse {
+  width: 60% !important;
+} */
 
 
