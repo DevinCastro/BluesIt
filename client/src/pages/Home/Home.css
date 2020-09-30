@@ -2,11 +2,16 @@
     font-family: 'Montserrat', sans-serif;
 }
 
+.please {
+  width: 100%;
+}
+
 #frontLogo {
     font-size: 80px;
     text-align: center;
     color: #0470db;
     animation: glow 5s ease-in-out infinite alternate;
+    /* height: 150x; */
   }
   @keyframes glow {
     from {
@@ -30,9 +35,9 @@
   background-color: black !important;
 }
 
-.solidBorder {
+/* .solidBorder {
   border: 1px white solid !important;
-}
+} */
 
 #border {
   border: none;
@@ -45,6 +50,7 @@
   margin-right: auto;
 }
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 .please {
   width: 60%;
@@ -65,4 +71,8 @@
   background-color: lightblue;
   background-image: linear-gradient( lightblue, darkblue);
 >>>>>>> d1ba66c79a015e75399a4e3c27ea324f16145b16
+=======
+#border {
+    border: none;
+>>>>>>> 4581624a47d92309724a6ecaee4619140a184b89
 }

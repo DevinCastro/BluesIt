@@ -3,7 +3,8 @@ import React, { useEffect, useState } from 'react'
 import { Button, Container, Row, Col } from 'reactstrap';
 import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
 import { Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
-import { Form, FormGroup, Label, Input, FormText } from 'reactstrap';
+import { Form, FormGroup, Label, Input, FormText, CustomInput } from 'reactstrap';
+
 import {
   BrowserRouter as Router,
   Switch,
@@ -233,10 +234,16 @@ const Home = () => {
             </Row>
           </Col>
         </Row>
+<<<<<<< HEAD
         <hr className="white"></hr>
         <br></br>
         <Row id="border" className="card">
           <Col xs="12">
+=======
+        {/* <hr className="white"></hr> */}
+        <Row  id="border">
+          <Col xs="9">
+>>>>>>> 4581624a47d92309724a6ecaee4619140a184b89
             <div className="please"> 
               {
                 postState.posts.length > 0 ? (
@@ -262,9 +269,9 @@ const Home = () => {
               }
             </div>
           </Col>
-          {/* <Col xs="3">
+          <Col xs="3">
             <h1>kill me</h1>
-          </Col> */}
+          </Col>  
         </Row>
       </div>
     </>
