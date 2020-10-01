@@ -68,10 +68,10 @@ const Threadpost = props => {
     useEffect(() => {
         axios.get(`/api/posts/${id}`)
             .then(({ data }) => {
-                
+
                 console.log(data)
-                setCommentState({ ...commentState, comments: data.comments})
-                
+                setCommentState({ ...commentState, comments: data.comments })
+
             })
             .catch(err => console.log(err))
     }, [])
@@ -86,26 +86,24 @@ const Threadpost = props => {
                 <Card className="w-full">
                     {/* <CardImg top width="100%" src="/assets/318x180.svg" alt="Card image cap" /> */}
                     <CardBody>
-            <CardSubtitle><h1>{props.title}</h1></CardSubtitle>
-            <CardText>{props.text}</CardText>
-            <CardSubtitle>👍 {props.likes}</CardSubtitle>
+                        <CardSubtitle><h1>{props.title}</h1></CardSubtitle>
+                        <CardText>{props.text}</CardText>
+                        <CardSubtitle>👍 {props.likes}</CardSubtitle>
+                        <CardText><a target='_blank' href={props.link}>{props.link}</a></CardText>
+                        <Row id="small" className="text-center">
+                            <Col>
+                                <CardTitle>Post by: {props.username}</CardTitle>
+                            </Col>
+                            <Col>
+                                <CardText><CommIcon />  {props.commentNum} comments</CardText>
+                            </Col>
+                            <Col>
+                                <CardText>Posted on: <Moment format="MM/DD/YY h:mm a">{props.date}</Moment></CardText>
+                            </Col>
+                        </Row>
+                    </CardBody>
 
-            <CardText><a target='_blank' href={props.link}>{props.link}</a></CardText>
-            <Row id="small" className="text-center">
-              <Col>
-                <CardTitle>Post by: {props.username}</CardTitle>
-              </Col>
-              <Col>
-                <CardText><CommIcon/>  {props.commentNum} comments</CardText>
-              </Col>
-              <Col>
-                <CardText>Posted on: <Moment format="MM/DD/YY h:mm a">{props.date}</Moment></CardText>
-              </Col>
-            
-            </Row>
-          </CardBody>
-                    
-                    
+
                     {/* <CardBody>
                         <CardTitle>Post by: {props.username}</CardTitle>
                         <CardSubtitle>👍 {props.likes}</CardSubtitle>
@@ -117,10 +115,10 @@ const Threadpost = props => {
 
                 </Card>
                 <br />
-                {localStorage.getItem('user')  ? 
-                <Button color="danger" onClick={toggle2}>Add Comment</Button>
-                : null
-}
+                {localStorage.getItem('user') ?
+                    <Button color="danger" onClick={toggle2}>Add Comment</Button>
+                    : null
+                }
                 <Modal isOpen={modal} toggle={toggle2}>
                     <ModalHeader toggle={toggle2}>Write a Comment</ModalHeader>
                     <ModalBody>
@@ -148,13 +146,9 @@ const Threadpost = props => {
                         <Button className='grad' onClick={toggle2}>Cancel</Button>
                     </ModalFooter>
                 </Modal>
-
             </div>
             <br />
-
-
             <div>
-
                 {
                     commentState.comments.length > 0 ? (
                         commentState.comments.map(comment => (
@@ -162,7 +156,7 @@ const Threadpost = props => {
                                 {/* <Link to="/thread"> */}
                                 <Comment
                                     id={comment._id}
-                                    username={comment.user.username}           
+                                    username={comment.user.username}
                                     text={comment.text}
                                     date={comment.createdAt}
                                     link={comment.link}
@@ -172,11 +166,7 @@ const Threadpost = props => {
                         ))
                     ) : null
                 }
-
             </div>
-
-        
-
         </>
     )
 }

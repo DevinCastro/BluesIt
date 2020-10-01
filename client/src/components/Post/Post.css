@@ -18,3 +18,13 @@
 .left {
   margin-left: 5px !important;
 }
+
+.post-body {
+  margin-bottom: 25px;
+  box-shadow: -2px 2px 5px 9px rgba(0,0,0,0.75);
+  transition: 0.3s;
+}
+
+.card-body {
+  
+}
