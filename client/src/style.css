@@ -1,11 +1,9 @@
-
-
-* {
-  background-color: black;
-  text-decoration: none;
-  font-weight: lighter;
-  font-family: Arvo;
-  color: white;
+body {
+  background-color: #100E17 !important;
+  text-decoration: none !important;
+  font-weight: lighter !important;
+  font-family: Arvo !important;
+  color: white !important;
 }
 
 .blue {
@@ -17,7 +15,6 @@
   height: 50px;
 }
 
-
 .center {
   text-align: center
 }
@@ -27,7 +24,7 @@
 }
 
 .logout {
-  background-color: black !important;
+  background-color: transparent !important;
   border: 0rem !important;
   color: #0470db !important;
   position: relative;
@@ -35,8 +32,8 @@
 }
 
 .logout:hover {
-  background-color: black;
-  color: #034e99;
+  background-color: transparent !important;
+  color: #034e99 !important;
 }
 
 .logout::before {
@@ -46,7 +43,7 @@
   height: 2px;
   bottom: 0;
   left: 0;
-  background-color: #000;
+  background-color: transparent !important;
   visibility: hidden;
   transform: scaleX(0);
   transition: all 0.3s ease-in-out 0s;
@@ -63,10 +60,6 @@
   border-radius: 25px;
 }
 
-.navLink {
-  color: red;
-}
-
 .test {
   color: white !important;
 }
@@ -80,9 +73,18 @@
   height: auto;
 }
 
+.card-body {
+  background-color: #201c29 !important;
+}
+
+.card {
+  border: none !important;
+  margin-bottom: 20px;
+  box-shadow: 0px 7px 15px 0px rgba(0, 0, 0, 0.75);
+}
 .App {
   text-align: center;
-  height: 500px;
+  height: 1000px;
 }
 
 .scrollTop {
@@ -110,20 +112,4 @@
   100% {
     opacity: 0.5;
   }
-}
-
-
-.commIcon {
-width: 25px !important;
-height: auto !important;
-}
-
-.GrCamera {
-  background-color: black;
-  size:  55px;
-}
-
-.HiSortAscending {
-  background-color: black;
-  size:  55px !important;
 }

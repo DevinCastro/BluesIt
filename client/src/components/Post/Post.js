@@ -28,16 +28,16 @@ const Post = props => {
       <div className="post-body">
         <Card className="w-full card main-body">
           {/* <CardImg top width="100%" src="/assets/318x180.svg" alt="Card image cap" /> */}
-          <CardBody >
+          <CardBody>
             <CardSubtitle ><h1>{props.title}</h1></CardSubtitle>
             {/* <CardText>{props.text}</CardText> */}
             <CardText ><a target='_blank' href={props.link}>{props.link}</a></CardText>
-            <Row  id="small" className="text-center">
+            <Row id="small" className="text-center">
               <Col className='left'>
                 <CardTitle  >Post by: {props.username}</CardTitle>
               </Col>
               <Col className='left'>
-                <CardText ><CommIcon/>  {props.commentNum}  comments</CardText>
+                <CardText><CommIcon />{props.commentNum} comments</CardText>
               </Col>
               <Col className='left'>
                 <CardText >Posted on: <Moment format="MM/DD/YY h:mm a">{props.date}</Moment></CardText>
@@ -45,24 +45,23 @@ const Post = props => {
             </Row>
 
             <div className="text-center">
-              { localStorage.getItem('user') ?
-                  (props.liked ? <Button className="likeMe grad" id={props.id} data-likes={props.likes} data-liked={props.liked} onClick={props.handleLike}>{props.likes} 👎</Button> : <Button className="likeMe grad" id={props.id} data-likes={props.likes} data-liked={props.liked} onClick={props.handleLike}>{props.likes} 👍</Button>)
-                : null 
+              {localStorage.getItem('user') ?
+                (props.liked ? <Button className="likeMe grad" id={props.id} data-likes={props.likes} data-liked={props.liked} onClick={props.handleLike}>{props.likes} 👎</Button> : <Button className="likeMe grad" id={props.id} data-likes={props.likes} data-liked={props.liked} onClick={props.handleLike}>{props.likes} 👍</Button>)
+                : null
               }
 
               {"            "}
-  
+              
               <Link to={`/thread/${props.id}`}><Button className="likeMe grad" id={props.id}>View Thread</Button></Link>
             </div>
           </CardBody>
         </Card>
       </div>
-      
     </>
   )
-        }
+}
 
-        export default Post
+export default Post
 //   return (
 //     <>
 //       <div className="post-body">

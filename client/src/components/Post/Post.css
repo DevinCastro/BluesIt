@@ -10,7 +10,6 @@
 }
 
 .grad {
-  
   background-color: black;
   background-image: linear-gradient( black, darkblue);
 }
