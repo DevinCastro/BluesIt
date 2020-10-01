@@ -96,13 +96,11 @@ const App = () => {
         </Switch>
       </div>
       <ToastContainer limit={1} />
-
-      <br></br>
-      <footer id="footer" className="text-center fixed-bottom">
+      <footer className="text-center sticky-bottom">
         <p>
-          Created by: <a href="">Devin Castro</a>, <a href="">Danielle Hillman</a>, <a href="">Brian Ratunil</a>, <a href="">Kenny Yang</a>
-              <br></br>
-    
+          Created by: <a href="" target="_blank">Devin Castro</a>, <a href="" target="_blank">Danielle Hillman</a>, <a href="" target="_blank">Brian Ratunil</a>, <a href="" target="_blank">Kenny Yang</a>
+        </p>
+        <p>
           Powered by: MongoDB, Express, React, Node
         </p>
       </footer>
