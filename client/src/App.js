@@ -106,7 +106,10 @@ const App = () => {
         </p>
         <p>
           Powered by: MongoDB, Express, React, Node
+        <br></br>
         </p>
+        <br></br>
+        <br></br>
       </footer>
     </Router>
     
