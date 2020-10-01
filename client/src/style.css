@@ -25,15 +25,12 @@ body {
 
 .logout {
   background-color: transparent !important;
-  border: 0rem !important;
-  color: #0470db !important;
   position: relative;
+  color: white;
   text-decoration: none;
-}
-
-.logout:hover {
-  background-color: transparent !important;
-  color: #034e99 !important;
+  border: none !important;
+  padding: none !important;
+  margin: none !important;
 }
 
 .logout::before {
@@ -43,13 +40,13 @@ body {
   height: 2px;
   bottom: 0;
   left: 0;
-  background-color: transparent !important;
+  background-color: white;
   visibility: hidden;
   transform: scaleX(0);
   transition: all 0.3s ease-in-out 0s;
 }
 
-.logout::before {
+.logout:hover::before {
   visibility: visible;
   transform: scaleX(1);
 }
@@ -82,3 +79,28 @@ body {
   margin-bottom: 20px;
   box-shadow: 0px 7px 15px 0px rgba(0, 0, 0, 0.75);
 }
+
+a > #loginSignup, #home {
+  position: relative;
+  color: white;
+  text-decoration: none;
+}
+
+a > #loginSignup::before, #home::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: white;
+  visibility: hidden;
+  transform: scaleX(0);
+  transition: all 0.3s ease-in-out 0s;
+}
+
+a > #loginSignup:hover::before, #home:hover::before {
+  visibility: visible;
+  transform: scaleX(1);
+}
+

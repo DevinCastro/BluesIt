@@ -32,7 +32,7 @@
 }
 
 .black {
-  background-color: black !important;
+  background-color: #201c29 !important;
 }
 
 #textBox {
@@ -40,6 +40,7 @@
   width: 173px;
   margin-left: auto;
   margin-right: auto;
+  background-color: #f3eedf;
 }
 
 #border {
@@ -47,13 +48,15 @@
 }
 
 .grad {
-  background-color: black;
-  background-image: linear-gradient( black, darkblue);
+  text-decoration: none !important;
+  color: white !important;
+  background-color:#104c91 !important;
 }
 
-.gradd {
-  background-color: lightblue;
-  background-image: linear-gradient( lightblue, darkblue);
+.grad > a {
+  text-decoration: none !important;
+  color: white !important;
+  background-color:#104c91 !important;
 }
 
 .modal {
@@ -66,5 +69,6 @@
 }
 
 #postButton {
-  background-color: #E69A8DFF;
+  background-color: #f3eedf;
+  color: #104c91;
 }

@@ -162,11 +162,11 @@ const Home = () => {
                   <Dropdown isOpen={dropdownOpen} toggle={toggle}>
                     <DropdownToggle caret className='grad'>
                       Sort By
-                    </DropdownToggle >
+                    </DropdownToggle>
                     <DropdownMenu className="black solidBorder">
-                      <DropdownItem className="black"><Button className="dropDown gradd" onClick={postState.handleLikeSort}>Most Liked</Button></DropdownItem>
-                      <DropdownItem className="black"><Button className="dropDown gradd" onClick={postState.handleRecentSort}>Most Recent</Button></DropdownItem>
-                      <DropdownItem className="black"><Button className="dropDown gradd" onClick={postState.handleCommentSort}>Most Comments</Button></DropdownItem>
+                      <DropdownItem className="black"><Button className="dropDown grad" onClick={postState.handleLikeSort}>Most Liked</Button></DropdownItem>
+                      <DropdownItem className="black"><Button className="dropDown grad" onClick={postState.handleRecentSort}>Most Recent</Button></DropdownItem>
+                      <DropdownItem className="black"><Button className="dropDown grad" onClick={postState.handleCommentSort}>Most Comments</Button></DropdownItem>
                     </DropdownMenu>
                   </Dropdown>
                 </Col>
@@ -260,7 +260,7 @@ const Home = () => {
                         onChange={songState.handleInputChange}
                       />
                     </FormGroup>
-                    <Button onClick={songState.handleSearch}>Search</Button>
+                    <Button className="grad" onClick={songState.handleSearch}>Search</Button>
                   </Form>
                 </CardBody>
               </Card>
@@ -278,7 +278,6 @@ const Home = () => {
                   ))
                 ) : null
               }
-
             </Col>
           </Row>
         </div>

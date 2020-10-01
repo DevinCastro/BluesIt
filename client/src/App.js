@@ -73,10 +73,10 @@ const App = () => {
                 to="/"
               />
               <NavItem className="justify-content-end">
-                <NavLink activeClassName="navLink"><Link to="/">Home</Link></NavLink>
+                <NavLink activeClassName="navLink"><Link id="home" to="/">Home</Link></NavLink>
               </NavItem>
               <NavItem>
-                <NavLink><Link to="/login">Login/Signup</Link></NavLink>
+                <NavLink><Link id="loginSignup" to="/login">Login/Signup</Link></NavLink>
               </NavItem>
             </Nav>
           </Collapse>
