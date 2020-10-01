@@ -23,6 +23,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import axios from 'axios'
 import Scrollup from './components/Scrollup/Scrollup';
+import './style.css'
 
 const App = () => {
   const [isOpen, setIsOpen] = useState(false);
