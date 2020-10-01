@@ -1,10 +1,10 @@
 import React, { Component } from 'react'
-import { GrCamera } from 'react-icons/gr';
+import { FcOldTimeCamera } from 'react-icons/fc';
 
 
 class Camera extends React.Component {
   render() {
-    return <><GrCamera className="GrCamera" /> </>
+    return <><FcOldTimeCamera className="GrCamera" /> </>
     
   }
 }

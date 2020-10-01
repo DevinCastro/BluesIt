@@ -119,11 +119,11 @@ height: auto !important;
 }
 
 .GrCamera {
-  background-color: white;
+  background-color: black;
   size:  55px;
 }
 
 .HiSortAscending {
   background-color: black;
-  size:  55px;
+  size:  55px !important;
 }
