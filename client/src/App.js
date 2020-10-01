@@ -56,11 +56,13 @@ const App = () => {
 
     <Router>
       <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet"></link>
+      <link href='https://fonts.googleapis.com/css?family=Arvo' rel='stylesheet'></link>
+      <link href='https://fonts.googleapis.com/css?family=Brawler' rel='stylesheet'></link>
       <div>
         <Navbar color="gainsboro" light expand="md">
-          <NavbarToggler className="white" onClick={toggle} />
-          <Collapse isOpen={isOpen} navbar>
-            <Nav className="mr-auto" navbar>
+          <NavbarToggler className="blue" onClick={toggle} />
+          <Collapse className="topNav" isOpen={isOpen} navbar>
+            <Nav className="topNav" navbar>
               <img
                 src={logo}
                 width="50"
@@ -77,14 +79,14 @@ const App = () => {
               </NavItem>
             </Nav>
           </Collapse>
-            <div>
+            <Nav>
+              <Button className="float-right logout" onClick={logOut}>Logout</Button>
               {
                 imageState.image ? 
                 <img className="profilePhoto float-right" src={imageState.image} />
                 : null
               }
-              <Button className="float-right logout" onClick={logOut}>Logout</Button>
-            </div>
+            </Nav>
         </Navbar>
         <Switch>
           <Route exact path="/" component={Home} />
@@ -94,7 +96,16 @@ const App = () => {
         </Switch>
       </div>
       <ToastContainer limit={1} />
+      <footer className="text-center sticky-bottom">
+        <p>
+          Created by: <a href="https://github.com/DevinCastro" target="_blank">Devin Castro</a>, <a href="https://github.com/daniellehillman" target="_blank">Danielle Hillman</a>, <a href="https://github.com/brianra2nil" target="_blank">Brian Ratunil</a>, <a href="https://github.com/Kennsters" target="_blank">Kenny Yang</a>
+        </p>
+        <p>
+          Powered by: MongoDB, Express, React, Node
+        </p>
+      </footer>
     </Router>
+    
 
 
   )

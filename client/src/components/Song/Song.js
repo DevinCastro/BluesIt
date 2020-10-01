@@ -16,7 +16,6 @@ const Song = props => {
             <CardTitle>{props.name}</CardTitle>
             <CardText>Artist: {props.artist}</CardText>
             <CardText><a target="_blank" href={`https://www.songsterr.com/a/wa/song?id=${props.id}`}>Link</a></CardText>
-            <Button>Copy</Button>
           </CardBody>
         </Card>
       </div>
