@@ -23,22 +23,6 @@ var storage = multer.diskStorage({
 var upload = multer({ storage: storage }); 
 // =================test
 
-
-// GET all users
-// router.get('/users', (req, res) => {
-//   User.find()
-//     .populate('posts')
-//     .then(users => res.json(users))
-//     .catch(err => console.log(err))
-// })
-
-// // POST one user
-// router.post('/users', (req, res) => {
-//   User.create(req.body)
-//     .then(user => res.json(user))
-//     .catch(err => console.log(err))
-// })
-
 router.post('/users/register', upload.single('image'), (req, res, next ) => {
   let img = {
     data: fs.readFileSync(path.join(__dirname,'..','uploads',req.file.filename)),
@@ -50,16 +34,6 @@ router.post('/users/register', upload.single('image'), (req, res, next ) => {
     res.sendStatus(200)
   })
 })
-
-
-
-// router.post('/users/register', (req, res) => {
-//   const { name, username, email, password, } = req.body
-//   User.register(new User({ name, email, username }), password, err => {
-//     if (err) { console.log(err) }
-//     res.sendStatus(200)
-//   })
-// })
 
 router.post('/users/login', (req, res) => {
   const { username, password } = req.body

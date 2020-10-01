@@ -11,7 +11,6 @@
   text-align: center;
   color: #0470db;
   animation: glow 5s ease-in-out infinite alternate;
-  /* height: 150x; */
 }
 
 @keyframes glow {
@@ -36,10 +35,6 @@
   background-color: black !important;
 }
 
-/* .solidBorder {
-border: 1px white solid !important;
-} */
-
 #textBox {
   height: 15px;
   width: 173px;
@@ -61,8 +56,6 @@ border: 1px white solid !important;
   background-image: linear-gradient( lightblue, darkblue);
 }
 
-/* for the background of the modal */
-
 .modal {
   background: grey;
 }
@@ -70,4 +63,8 @@ border: 1px white solid !important;
 .modal-body, .modal-header, .modal-footer {
   background-color: #201b29;
   color: white;
+}
+
+#postButton {
+  background-color: #E69A8DFF;
 }
