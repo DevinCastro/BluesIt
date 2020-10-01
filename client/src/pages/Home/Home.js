@@ -17,6 +17,9 @@ import './Home.css'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Song from '../../components/Song'
+import Ascending from '../../components/Ascending/Ascending.js'
+
+
 const Home = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const toggle = () => setDropdownOpen(prevState => !prevState);
@@ -145,13 +148,13 @@ const Home = () => {
               <Row className="text-center">
                 <Col xs="4"> 
                   <Dropdown isOpen={dropdownOpen} toggle={toggle}>
-                    <DropdownToggle caret className='grad'>
-                      Sort By
+                    <DropdownToggle caret className='grad'> <Ascending/>
+                      Sort By 
                     </DropdownToggle >
                     <DropdownMenu className="black solidBorder">
-                      <DropdownItem className="black"><Button className="dropDown gradd" onClick={postState.handleLikeSort}>Most Liked</Button></DropdownItem>
-                      <DropdownItem className="black"><Button className="dropDown gradd" onClick={postState.handleRecentSort}>Most Recent</Button></DropdownItem>
-                      <DropdownItem className="black"><Button className="dropDown gradd" onClick={postState.handleCommentSort}>Most Comments</Button></DropdownItem>
+                      <DropdownItem className="black"><Button className="dropDown gradd" onClick={postState.handleLikeSort}>Most Liked </Button></DropdownItem>
+                      <DropdownItem className="black"><Button className="dropDown gradd" onClick={postState.handleRecentSort}>Most Recent </Button></DropdownItem>
+                      <DropdownItem className="black"><Button className="dropDown gradd" onClick={postState.handleCommentSort}>Most Comments </Button></DropdownItem>
                     </DropdownMenu>
                   </Dropdown>
                 </Col>
@@ -162,7 +165,7 @@ const Home = () => {
                       : null
                     }
                     <Modal isOpen={modal} toggle={toggle2}>
-                      <ModalHeader toggle={toggle2}>Make a post</ModalHeader>
+                      <ModalHeader toggle={toggle2}>Make a post </ModalHeader>
                       <ModalBody>
                         <Form>
                           <FormGroup>

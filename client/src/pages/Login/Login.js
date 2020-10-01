@@ -10,6 +10,7 @@ import { Button, Form, FormGroup, Label, Input, FormText, Container, Row, Col } 
 // import './Login.css'
 import guitar from '../Login/guitar.png'
 import guitar2 from '../Login/guitar2.png'
+import GrCamera from '../../components/Camera/Camera.js'
 const Login = () => {
 
   const [registerState, setRegisterState] = useState({
@@ -139,15 +140,16 @@ const Login = () => {
             />
           </p>
           <p>
-            <Label for="exampleCustomFileBrowser"> Upload a Profile Picture </Label>
+            <Label for="exampleCustomFileBrowser"> Upload a Profile Picture </Label>  <GrCamera/>
             <Input
               className="fileBrowser"
               type="file"
               name="image"
             // value={registerState.image}
             // onChange={registerState.handleFile}  
-            />
+            /> 
           </p>
+          
 
               <p className="text-center">
             <Button className="grad"
