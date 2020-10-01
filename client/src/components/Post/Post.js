@@ -51,7 +51,7 @@ const Post = props => {
               }
 
               {"            "}
-
+              
               <Link to={`/thread/${props.id}`}><Button className="likeMe grad" id={props.id}>View Thread</Button></Link>
             </div>
           </CardBody>
