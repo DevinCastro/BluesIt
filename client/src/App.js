@@ -112,9 +112,6 @@ const App = () => {
         <br></br>
       </footer>
     </Router>
-
-
-
   )
 }
 

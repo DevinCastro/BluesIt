@@ -1,9 +1,9 @@
 body {
-  background-color: #100E17;
+  background-color: #100E17 !important;
   text-decoration: none;
   font-weight: lighter;
   font-family: Arvo;
-  color: white;
+  color: white !important;
 }
 
 .blue {
@@ -24,16 +24,16 @@ body {
 }
 
 .logout {
-  background-color: transparent;
-  border: 0rem;
-  color: #0470db;
+  background-color: transparent !important;
+  border: 0rem !important;
+  color: #0470db !important;
   position: relative;
   text-decoration: none;
 }
 
 .logout:hover {
-  background-color: transparent;
-  color: #034e99;
+  background-color: transparent !important;
+  color: #034e99 !important;
 }
 
 .logout::before {
@@ -43,7 +43,7 @@ body {
   height: 2px;
   bottom: 0;
   left: 0;
-  background-color: transparent;
+  background-color: transparent !important;
   visibility: hidden;
   transform: scaleX(0);
   transition: all 0.3s ease-in-out 0s;
@@ -58,10 +58,6 @@ body {
   width: 50px;
   height: 50px;
   border-radius: 25px;
-}
-
-.navLink {
-  color: red;
 }
 
 .test {
