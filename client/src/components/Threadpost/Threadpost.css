@@ -1,4 +1,19 @@
 #threadPost {
     margin-right: 20px;
-    margin-left: 20px;
+    margin-left: 50px;
+    width: 75%;
+    justify-content: center;
+  
 }
+
+@media only screen and (max-width: 600px) {
+    #threadPost {
+       
+        justify-content: center;
+        width: 80%;
+    }
+  }
+
+/* #threadpostSmall {
+
+} */

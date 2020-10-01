@@ -82,7 +82,7 @@ const Threadpost = props => {
     return (
         <>
             <div id="threadPost">
-                <Card className="w-full">
+                <Card >
                     {/* <CardImg top width="100%" src="/assets/318x180.svg" alt="Card image cap" /> */}
                     <CardBody>
             <CardSubtitle><h1>{props.title}</h1></CardSubtitle>

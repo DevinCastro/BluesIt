@@ -60,7 +60,7 @@ const App = () => {
       <link href='https://fonts.googleapis.com/css?family=Brawler' rel='stylesheet'></link>
       <div>
         <Navbar color="gainsboro" light expand="md">
-          <NavbarToggler className="blue" onClick={toggle} />
+          <NavbarToggler className="blue" id="navDown" onClick={toggle} />
           <Collapse className="topNav" isOpen={isOpen} navbar>
             <Nav className="topNav" navbar>
               <img
@@ -96,7 +96,7 @@ const App = () => {
         </Switch>
       </div>
       <ToastContainer limit={1} />
-      <footer className="text-center sticky-bottom">
+      <footer id="footer" className="text-center fixed-bottom">
         <p>
           Created by: <a href="" target="_blank">Devin Castro</a>, <a href="" target="_blank">Danielle Hillman</a>, <a href="" target="_blank">Brian Ratunil</a>, <a href="" target="_blank">Kenny Yang</a>
         </p>

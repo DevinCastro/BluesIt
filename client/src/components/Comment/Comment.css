@@ -1,3 +1,17 @@
 #comments {
-    margin: 40px;
+    margin-right: 20px;
+    margin-left: 80px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+    width: 70%;
+    justify-content: center;
+
 }
+
+@media only screen and (max-width: 600px) {
+    #comments {
+        
+        align-content: center;
+        width: 70%;
+    }
+  }
