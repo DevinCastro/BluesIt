@@ -14,6 +14,7 @@ import axios from 'axios'
 import { PromiseProvider } from 'mongoose';
 import Moment from 'react-moment';
 import './Post.css'
+import CommIcon from '../CommIcon/CommIcon';
 
 
 const Post = props => {
@@ -36,7 +37,7 @@ const Post = props => {
                 <CardTitle  >Post by: {props.username}</CardTitle>
               </Col>
               <Col className='left'>
-                <CardText >{props.commentNum} comments</CardText>
+                <CardText ><CommIcon/>  {props.commentNum}  comments</CardText>
               </Col>
               <Col className='left'>
                 <CardText >Posted on: <Moment format="MM/DD/YY h:mm a">{props.date}</Moment></CardText>
