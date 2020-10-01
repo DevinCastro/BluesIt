@@ -14,6 +14,7 @@ import {
     Link
 } from 'react-router-dom'
 import './Threadpost.css'
+import CommIcon from '../CommIcon/CommIcon';
 
 
 
@@ -95,7 +96,7 @@ const Threadpost = props => {
                 <CardTitle>Post by: {props.username}</CardTitle>
               </Col>
               <Col>
-                <CardText>{props.commentNum} comments</CardText>
+                <CardText><CommIcon/>  {props.commentNum} comments</CardText>
               </Col>
               <Col>
                 <CardText>Posted on: <Moment format="MM/DD/YY h:mm a">{props.date}</Moment></CardText>

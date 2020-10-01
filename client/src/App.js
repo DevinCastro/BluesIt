@@ -22,6 +22,7 @@ import logo from './logo.png'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import axios from 'axios'
+import Scrollup from './components/Scrollup/Scrollup';
 
 const App = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -96,13 +97,19 @@ const App = () => {
         </Switch>
       </div>
       <ToastContainer limit={1} />
+      <div className="App">
+      <Scrollup/>
+    </div>
       <footer className="text-center sticky-bottom">
         <p>
           Created by: <a href="https://github.com/DevinCastro" target="_blank">Devin Castro</a>, <a href="https://github.com/daniellehillman" target="_blank">Danielle Hillman</a>, <a href="https://github.com/brianra2nil" target="_blank">Brian Ratunil</a>, <a href="https://github.com/Kennsters" target="_blank">Kenny Yang</a>
         </p>
         <p>
           Powered by: MongoDB, Express, React, Node
+        <br></br>
         </p>
+        <br></br>
+        <br></br>
       </footer>
     </Router>
     
