@@ -28,7 +28,7 @@ const Post = props => {
       <div className="post-body">
         <Card className="w-full card main-body">
           {/* <CardImg top width="100%" src="/assets/318x180.svg" alt="Card image cap" /> */}
-          <CardBody >
+          <CardBody>
             <CardSubtitle ><h1>{props.title}</h1></CardSubtitle>
             {/* <CardText>{props.text}</CardText> */}
             <CardText ><a target='_blank' href={props.link}>{props.link}</a></CardText>

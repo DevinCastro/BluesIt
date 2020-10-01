@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react'
-import { Button, Container, Row, Col } from 'reactstrap';
+import { Button, Container, Row, Col, CardBody } from 'reactstrap';
 import { Dropdown, DropdownToggle, DropdownMenu, DropdownItem } from 'reactstrap';
 import { Modal, ModalHeader, ModalBody, ModalFooter, Card } from 'reactstrap';
 import { Form, FormGroup, Label, Input, FormText, CustomInput } from 'reactstrap';
@@ -31,7 +31,7 @@ const Home = () => {
   }
   songState.handleSearch = event => {
     event.preventDefault()
-    
+
     axios.get(`https://www.songsterr.com/a/ra/songs.json?pattern=${songState.song}`)
       .then(({ data }) => {
         console.log(data.slice(0, 5))
@@ -143,7 +143,7 @@ const Home = () => {
           <Row className="nav">
             <Col xs="12">
               <Row className="text-center">
-                <Col xs="4"> 
+                <Col xs="4">
                   <Dropdown isOpen={dropdownOpen} toggle={toggle}>
                     <DropdownToggle caret className='grad'>
                       Sort By
@@ -155,7 +155,7 @@ const Home = () => {
                     </DropdownMenu>
                   </Dropdown>
                 </Col>
-                <Col xs="4"> 
+                <Col xs="4">
                   <div>
                     {localStorage.getItem('user') ?
                       <Button color="danger" onClick={toggle2}>Make a Post</Button>
@@ -214,13 +214,13 @@ const Home = () => {
                 </Col>
               </Row>
             </Col>
-            
+
           </Row>
           <hr></hr>
           {/* <hr className="white"></hr> */}
-          <Row  id="border">
+          <Row id="border">
             <Col md="9">
-              <div className="please"> 
+              <div className="please">
                 {
                   postState.posts.length > 0 ? (
                     postState.posts.map(post => (
@@ -247,10 +247,12 @@ const Home = () => {
             </Col>
             <Col md='3'>
               <Card>
-                <Form className="text-center">
+                <CardBody>
+
+                  <Form className="text-center">
                     <FormGroup>
                       <Label for="exampleText">Search for Tabs</Label>
-                      <Input 
+                      <Input
                         id="textBox"
                         type="text"
                         name="song"
@@ -259,23 +261,24 @@ const Home = () => {
                       />
                     </FormGroup>
                     <Button onClick={songState.handleSearch}>Search</Button>
-                </Form>
+                  </Form>
+                </CardBody>
               </Card>
-                {
-                  songState.songs.length > 0 ? (
-                    songState.songs.map(song => (
-                      <div key={song._id}>
-                    
-                        <Song 
-                          name={song.title}
-                          artist={song.artist.name}
-                          id={song.id}
-                        />
-      
-                      </div>
-                    ))
-                  ) : null
-                }
+              {
+                songState.songs.length > 0 ? (
+                  songState.songs.map(song => (
+                    <div key={song._id}>
+
+                      <Song
+                        name={song.title}
+                        artist={song.artist.name}
+                        id={song.id}
+                      />
+
+                    </div>
+                  ))
+                ) : null
+              }
             </Col>
           </Row>
         </div>

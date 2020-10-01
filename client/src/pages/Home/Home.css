@@ -1,9 +1,11 @@
 .font {
   font-family: Arvo;
 }
+
 .please {
-width: 100%;
+  width: 100%;
 }
+
 #frontLogo {
   font-size: 80px;
   text-align: center;
@@ -11,6 +13,7 @@ width: 100%;
   animation: glow 5s ease-in-out infinite alternate;
   /* height: 150x; */
 }
+
 @keyframes glow {
   from {
     text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #0073E6, 0 0 20px #0073E6, 0 0 25px #0073E6, 0 0 30px #0073E6, 0 0 35px #0073E6;
@@ -19,19 +22,24 @@ width: 100%;
     text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #0073E6, 0 0 40px #0073E6, 0 0 50px #0073E6, 0 0 60px #0073E6, 0 0 70px #0073E6;
   }
 }
-.smallPost {    
+
+.smallPost {
   margin-bottom: 25px;
 }
+
 .dropDown {
-border-radius: 25px;
-width: 100%;
+  border-radius: 25px;
+  width: 100%;
 }
+
 .black {
-background-color: black !important;
+  background-color: black !important;
 }
+
 /* .solidBorder {
 border: 1px white solid !important;
 } */
+
 #textBox {
   height: 15px;
   width: 173px;
@@ -54,6 +62,12 @@ border: 1px white solid !important;
 }
 
 /* for the background of the modal */
+
 .modal {
   background: grey;
+}
+
+.modal-body, .modal-header, .modal-footer {
+  background-color: #201b29;
+  color: white;
 }
