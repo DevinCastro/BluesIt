@@ -1,7 +1,5 @@
-
-
-* {
-  background-color: black;
+body {
+  background-color: #100E17;
   text-decoration: none;
   font-weight: lighter;
   font-family: Arvo;
@@ -23,7 +21,6 @@
   height: 50px;
 }
 
-
 .center {
   text-align: center
 }
@@ -35,15 +32,15 @@
 }
 
 .logout {
-  background-color: black !important;
-  border: 0rem !important;
-  color: #0470db !important;
+  background-color: transparent;
+  border: 0rem;
+  color: #0470db;
   position: relative;
   text-decoration: none;
 }
 
 .logout:hover {
-  background-color: black;
+  background-color: transparent;
   color: #034e99;
 }
 
@@ -54,7 +51,7 @@
   height: 2px;
   bottom: 0;
   left: 0;
-  background-color: #000;
+  background-color: transparent;
   visibility: hidden;
   transform: scaleX(0);
   transition: all 0.3s ease-in-out 0s;
@@ -88,46 +85,12 @@
   height: auto;
 }
 
-.App {
-  text-align: center;
-  height: 500px;
+.card-body {
+  background-color: #201c29 !important;
 }
 
-.scrollTop {
-  position: fixed; 
-  width: 100%;
-  bottom: 20px;
-  align-items: center;
-  height: 20px;
-  justify-content: center;
-  z-index: 1000;
-  cursor: pointer;
-  animation: fadeIn 0.3s;
-  transition: opacity 0.4s;
-  opacity: 0.5;
-}
-
-.scrollTop:hover{
-  opacity: 1;
-}
-
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 0.5;
-  }
-}
-
-#footer {
-  padding-top: 30px;
-  padding-bottom: 5px;
-    font-size: 15%;
-
-}
-
-.commIcon {
-width: 25px !important;
-height: auto !important;
+.card {
+  border: none !important;
+  margin-bottom: 20px;
+  box-shadow: 0px 7px 15px 0px rgba(0, 0, 0, 0.75);
 }

@@ -102,7 +102,7 @@ const App = () => {
     </div>
       <footer className="text-center sticky-bottom">
         <p>
-          Created by: <a href="" target="_blank">Devin Castro</a>, <a href="" target="_blank">Danielle Hillman</a>, <a href="" target="_blank">Brian Ratunil</a>, <a href="" target="_blank">Kenny Yang</a>
+          Created by: <a href="https://github.com/DevinCastro" target="_blank">Devin Castro</a>, <a href="https://github.com/daniellehillman" target="_blank">Danielle Hillman</a>, <a href="https://github.com/brianra2nil" target="_blank">Brian Ratunil</a>, <a href="https://github.com/Kennsters" target="_blank">Kenny Yang</a>
         </p>
         <p>
           Powered by: MongoDB, Express, React, Node
