@@ -9,11 +9,6 @@
   background-color: black !important;
 }
 
-.grad {
-  background-color: black;
-  background-image: linear-gradient( black, darkblue);
-}
-
 .left {
   margin-left: 5px !important;
 }

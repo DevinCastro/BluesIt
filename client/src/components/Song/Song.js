@@ -6,8 +6,7 @@ import {
 
 
 const Song = props => {
-
-
+  
   return (
     <>
       <div>
@@ -15,7 +14,7 @@ const Song = props => {
           <CardBody>
             <CardTitle>{props.name}</CardTitle>
             <CardText>Artist: {props.artist}</CardText>
-            <CardText><a target="_blank" href={`https://www.songsterr.com/a/wa/song?id=${props.id}`}>Link</a></CardText>
+            <Button className="grad"><a target="_blank" href={`https://www.songsterr.com/a/wa/song?id=${props.id}`}>Link</a></Button>
           </CardBody>
         </Card>
       </div>

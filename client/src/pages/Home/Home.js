@@ -17,21 +17,26 @@ import './Home.css'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import Song from '../../components/Song'
-import Ascending from '../../components/Ascending/Ascending.js'
-
 
 const Home = () => {
+
   const [dropdownOpen, setDropdownOpen] = useState(false);
+
   const toggle = () => setDropdownOpen(prevState => !prevState);
+
   const [modal, setModal] = useState(false);
+
   const toggle2 = () => setModal(!modal);
+
   const [songState, setSongState] = useState({
     song: '',
     songs: []
   })
+
   songState.handleInputChange = event => {
     setSongState({ ...songState, [event.target.name]: event.target.value })
   }
+
   songState.handleSearch = event => {
     event.preventDefault()
 
@@ -42,16 +47,18 @@ const Home = () => {
       })
       .catch(err => console.log(err))
   }
+
   const [postState, setPostState] = useState({
     text: '',
     title: '',
     link: '',
     posts: []
   })
+
   postState.handleInputChange = event => {
     setPostState({ ...postState, [event.target.name]: event.target.value })
   }
-  // function to hanlde a user making a post
+
   postState.handlePost = event => {
     event.preventDefault()
     toggle2()
@@ -83,7 +90,7 @@ const Home = () => {
         });
       })
   }
-  // populate posts on page, useEffect to GET posts
+  
   useEffect(() => {
     axios.get('/api/posts')
       .then(({ data }) => {
@@ -96,6 +103,7 @@ const Home = () => {
         console.log(data)
       })
   }, [])
+
   postState.handleLike = event => {
     console.log(event.target.id)
     let id = event.target.id
@@ -124,18 +132,22 @@ const Home = () => {
         console.log(err)
       })
   }
+
   postState.handleLikeSort = () => {
     const posts = postState.posts.sort((a, b) => b.likes - a.likes)
     setPostState({ ...postState, posts })
   }
+
   postState.handleRecentSort = () => {
     const posts = postState.posts.sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
     setPostState({ ...postState, posts })
   }
+
   postState.handleCommentSort = () => {
     const posts = postState.posts.sort((a, b) => b.comments.length - a.comments.length)
     setPostState({ ...postState, posts })
   }
+
   return (
     <>
       <Container>
@@ -148,20 +160,20 @@ const Home = () => {
               <Row className="text-center">
                 <Col xs="4">
                   <Dropdown isOpen={dropdownOpen} toggle={toggle}>
-                    <DropdownToggle caret className='grad'> <Ascending/>
-                      Sort By 
-                    </DropdownToggle >
+                    <DropdownToggle caret className='grad'>
+                      Sort By
+                    </DropdownToggle>
                     <DropdownMenu className="black solidBorder">
-                      <DropdownItem className="black"><Button className="dropDown gradd" onClick={postState.handleLikeSort}>Most Liked </Button></DropdownItem>
-                      <DropdownItem className="black"><Button className="dropDown gradd" onClick={postState.handleRecentSort}>Most Recent </Button></DropdownItem>
-                      <DropdownItem className="black"><Button className="dropDown gradd" onClick={postState.handleCommentSort}>Most Comments </Button></DropdownItem>
+                      <DropdownItem className="black"><Button className="dropDown grad" onClick={postState.handleLikeSort}>Most Liked</Button></DropdownItem>
+                      <DropdownItem className="black"><Button className="dropDown grad" onClick={postState.handleRecentSort}>Most Recent</Button></DropdownItem>
+                      <DropdownItem className="black"><Button className="dropDown grad" onClick={postState.handleCommentSort}>Most Comments</Button></DropdownItem>
                     </DropdownMenu>
                   </Dropdown>
                 </Col>
                 <Col xs="4">
                   <div>
                     {localStorage.getItem('user') ?
-                      <Button color="danger" onClick={toggle2}>Make a Post</Button>
+                      <Button id="postButton" onClick={toggle2}>Make a Post</Button>
                       : null
                     }
                     <Modal isOpen={modal} toggle={toggle2}>
@@ -201,26 +213,13 @@ const Home = () => {
                   </div>
                 </Col>
                 <Col xs="4">
-                  {/* <Form>
-                    <FormGroup>
-                      <Label for="exampleText">Search for Tabs</Label>
-                      <Input 
-                        id="textBox"
-                        type="text"
-                        name="song"
-                        value={songState.song}
-                        onChange={songState.handleInputChange}
-                      />
-                    </FormGroup>
-                    <Button onClick={songState.handleSearch}>Search</Button>
-                  </Form> */}
                 </Col>
               </Row>
             </Col>
-
           </Row>
+
           <hr></hr>
-          {/* <hr className="white"></hr> */}
+
           <Row id="border">
             <Col md="9">
               <div className="please">
@@ -228,7 +227,6 @@ const Home = () => {
                   postState.posts.length > 0 ? (
                     postState.posts.map(post => (
                       <div key={post._id}>
-                        {/* <Link to="/thread"> */}
                         <Post className="smallPost"
                           id={post._id}
                           username={post.user.username}
@@ -240,8 +238,7 @@ const Home = () => {
                           commentNum={post.comments.length}
                           date={post.createdAt}
                           link={post.link}
-                        />
-                        {/* </Link> */}
+                        />                       
                       </div>
                     ))
                   ) : null
@@ -249,9 +246,9 @@ const Home = () => {
               </div>
             </Col>
             <Col md='3'>
+
               <Card>
                 <CardBody>
-
                   <Form className="text-center">
                     <FormGroup>
                       <Label for="exampleText">Search for Tabs</Label>
@@ -263,21 +260,20 @@ const Home = () => {
                         onChange={songState.handleInputChange}
                       />
                     </FormGroup>
-                    <Button onClick={songState.handleSearch}>Search</Button>
+                    <Button className="grad" onClick={songState.handleSearch}>Search</Button>
                   </Form>
                 </CardBody>
               </Card>
+
               {
                 songState.songs.length > 0 ? (
                   songState.songs.map(song => (
                     <div key={song._id}>
-
                       <Song
                         name={song.title}
                         artist={song.artist.name}
                         id={song.id}
                       />
-
                     </div>
                   ))
                 ) : null
@@ -289,4 +285,5 @@ const Home = () => {
     </>
   )
 }
+
 export default Home

@@ -20,8 +20,11 @@ import CommIcon from '../CommIcon/CommIcon';
 
 const Threadpost = props => {
     const [dropdownOpen, setDropdownOpen] = useState(false)
+
     const toggle = () => setDropdownOpen(prevState => !prevState)
+
     const [modal, setModal] = useState(false)
+
     const toggle2 = () => setModal(!modal)
 
     const [commentState, setCommentState] = useState({
@@ -44,8 +47,7 @@ const Threadpost = props => {
             headers: {
                 Authorization: `Bearer ${localStorage.getItem('user')}`
             }
-        }
-        )
+        })
             .then(({ data }) => {
                 console.log(data)
                 setCommentState({ ...commentState, text: '', link: '' })
@@ -53,15 +55,6 @@ const Threadpost = props => {
             })
             .catch(err => console.log(err))
     }
-
-    // useEffect(() => {
-    //     axios.get('/api/comments')
-    //         .then(({ data }) => {
-    //             // const comments = data.filter(comment => comment.post._id === props.id)
-    //             console.log(data)
-    //         })
-    //         .catch(err => console.log(err))
-    // },[])
 
     let { id } = useParams()
 
@@ -76,20 +69,15 @@ const Threadpost = props => {
             .catch(err => console.log(err))
     }, [])
 
-
-
-
-
     return (
         <>
             <div id="threadPost">
                 <Card className="w-full">
-                    {/* <CardImg top width="100%" src="/assets/318x180.svg" alt="Card image cap" /> */}
                     <CardBody>
                         <CardSubtitle><h1>{props.title}</h1></CardSubtitle>
                         <CardText>{props.text}</CardText>
+                        <CardText><a target='_blank' href={props.postLink}>{props.postLink}</a></CardText>
                         <CardSubtitle>👍 {props.likes}</CardSubtitle>
-                        <CardText><a target='_blank' href={props.link}>{props.link}</a></CardText>
                         <Row id="small" className="text-center">
                             <Col>
                                 <CardTitle>Post by: {props.username}</CardTitle>
@@ -102,21 +90,12 @@ const Threadpost = props => {
                             </Col>
                         </Row>
                     </CardBody>
-
-
-                    {/* <CardBody>
-                        <CardTitle>Post by: {props.username}</CardTitle>
-                        <CardSubtitle>👍 {props.likes}</CardSubtitle>
-                        <CardSubtitle>Title: {props.title}</CardSubtitle>
-                        <CardText>{props.text}</CardText>
-                        <CardText><a target="_blank" href={props.postLink}>{props.postLink}</a></CardText>
-                        <CardText>{props.commentNum} Comments</CardText>
-                    </CardBody> */}
-
                 </Card>
+
                 <br />
+
                 {localStorage.getItem('user') ?
-                    <Button color="danger" onClick={toggle2}>Add Comment</Button>
+                    <Button onClick={toggle2} className="grad">Add Comment</Button>
                     : null
                 }
                 <Modal isOpen={modal} toggle={toggle2}>
@@ -147,7 +126,9 @@ const Threadpost = props => {
                     </ModalFooter>
                 </Modal>
             </div>
+
             <br />
+
             <div>
                 {
                     commentState.comments.length > 0 ? (
@@ -161,7 +142,6 @@ const Threadpost = props => {
                                     date={comment.createdAt}
                                     link={comment.link}
                                 />
-                                {/* </Link> */}
                             </div>
                         ))
                     ) : null

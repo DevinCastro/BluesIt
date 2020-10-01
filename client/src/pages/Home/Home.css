@@ -11,7 +11,6 @@
   text-align: center;
   color: #0470db;
   animation: glow 5s ease-in-out infinite alternate;
-  /* height: 150x; */
 }
 
 @keyframes glow {
@@ -33,18 +32,15 @@
 }
 
 .black {
-  background-color: black !important;
+  background-color: #201c29 !important;
 }
-
-/* .solidBorder {
-border: 1px white solid !important;
-} */
 
 #textBox {
   height: 15px;
   width: 173px;
   margin-left: auto;
   margin-right: auto;
+  background-color: #f3eedf;
 }
 
 #border {
@@ -52,16 +48,16 @@ border: 1px white solid !important;
 }
 
 .grad {
-  background-color: black;
-  background-image: linear-gradient( black, darkblue);
+  text-decoration: none !important;
+  color: white !important;
+  background-color:#104c91 !important;
 }
 
-.gradd {
-  background-color: lightblue;
-  background-image: linear-gradient( lightblue, darkblue);
+.grad > a {
+  text-decoration: none !important;
+  color: white !important;
+  background-color:#104c91 !important;
 }
-
-/* for the background of the modal */
 
 .modal {
   background: grey;
@@ -70,4 +66,9 @@ border: 1px white solid !important;
 .modal-body, .modal-header, .modal-footer {
   background-color: #201b29;
   color: white;
+}
+
+#postButton {
+  background-color: #f3eedf;
+  color: #104c91;
 }

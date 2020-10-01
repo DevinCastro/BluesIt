@@ -5,10 +5,6 @@ const Comment = new Schema({
     type: String,
     required: true
   },
-  // likes: {
-  //   type: Number,
-  //   required: true
-  // },
   link: {
     type: String,
     required: false

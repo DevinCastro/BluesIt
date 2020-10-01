@@ -15,10 +15,6 @@ const User = new Schema({
     unique: true,
     required: true
   },
-  // genre: {
-  //   type: String,
-  //   required: false
-  // },
   img: {
     data: Buffer,
     contentType: String

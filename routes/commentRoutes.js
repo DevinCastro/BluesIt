@@ -28,32 +28,6 @@ router.post('/comments', passport.authenticate('jwt'), (req, res) => {
     .catch(err => console.log(err))
 })
 
-// router.post('/comments/bulk', passport.authenticate('jwt'), (req, res) => {
-//   const comments = req.body.map(comment => ({
-//     ...comment,
-//     post: req.post._id
-//   }))
-
-//   Comment.create(comments)
-//     .then(comments => {
-//       const commentIds = comments.map(comment => comment._id)
-//       Post.findById(req.post._id)
-//         .then(post => {
-//           const allcomments = [...post.comments, ...commentIds]
-//           Post.findByIdAndUpdate(req.post._id, { comments: allcomments })
-//             .then(() => res.sendStatus(200))
-//             .catch(err => console.log(err))
-//         })
-//     })
-// })
-
-// // PUT one comment
-// router.put('/comments/:id', passport.authenticate('jwt'), (req, res) => {
-//   comment.findByIdAndUpdate(req.params.id, req.body)
-//     .then(() => res.sendStatus(200))
-//     .catch(err => console.log(err))
-// })
-
 // DELETE one post
 router.delete('/comments/:id', passport.authenticate('jwt'), (req, res) => {
   Comment.findByIdAndDelete(req.params.id)
