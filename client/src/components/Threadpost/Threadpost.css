@@ -1,0 +1,11 @@
+#threadPost {
+    margin-right: 20px;
+    margin-left: 20px;
+}
+
+.card {
+    margin-bottom: 25px;
+    box-shadow: -2px 2px 75px 9px rgba(0,0,0,0.75);
+    transition: 0.3s;
+
+}

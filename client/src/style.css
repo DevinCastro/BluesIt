@@ -1,0 +1,106 @@
+body {
+  background-color: #100E17 !important;
+  text-decoration: none !important;
+  font-weight: lighter !important;
+  font-family: Arvo !important;
+  color: white !important;
+}
+
+.blue {
+  background-color: #0470db;
+}
+
+.profilePhoto {
+  width: 50px;
+  height: 50px;
+}
+
+.center {
+  text-align: center
+}
+
+.font {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.logout {
+  background-color: transparent !important;
+  position: relative;
+  color: white;
+  text-decoration: none;
+  border: none !important;
+  padding: none !important;
+  margin: none !important;
+}
+
+.logout::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: white;
+  visibility: hidden;
+  transform: scaleX(0);
+  transition: all 0.3s ease-in-out 0s;
+}
+
+.logout:hover::before {
+  visibility: visible;
+  transform: scaleX(1);
+}
+
+.profilePhoto {
+  width: 50px;
+  height: 50px;
+  border-radius: 25px;
+}
+
+.test {
+  color: white !important;
+}
+
+.hide {
+  display: none !important;
+}
+
+.guitarpic {
+  width: 100%;
+  height: auto;
+}
+
+.card-body {
+  background-color: #201c29 !important;
+}
+
+.card {
+  border: none !important;
+  margin-bottom: 20px;
+  box-shadow: 0px 7px 15px 0px rgba(0, 0, 0, 0.75);
+}
+
+a > #loginSignup, #home {
+  position: relative;
+  color: white;
+  text-decoration: none;
+}
+
+a > #loginSignup::before, #home::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: white;
+  visibility: hidden;
+  transform: scaleX(0);
+  transition: all 0.3s ease-in-out 0s;
+}
+
+a > #loginSignup:hover::before, #home:hover::before {
+  visibility: visible;
+  transform: scaleX(1);
+}
+
