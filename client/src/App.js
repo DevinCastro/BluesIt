@@ -93,7 +93,7 @@ const App = () => {
           <Route exact path="/" component={Home} />
           <Route path="/login" component={Login} />
           <Route path="/thread/:id" component={Thread} />
-          <Route path="/api/users/register" component={Login} />
+          <Route exact path="/api/users/register" component={Login} />
         </Switch>
       </div>
       <ToastContainer limit={1} />
