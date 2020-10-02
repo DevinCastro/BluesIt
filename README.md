@@ -9,8 +9,8 @@
 >* Brian Ratunil
 >* Kenny Yang
 
-This application is deployed at: https://desolate-sands-65866.herokuapp.com/
-GitHub Repo: https://github.com/DevinCastro/BluesIt
+* This application is deployed at: https://desolate-sands-65866.herokuapp.com/
+* GitHub Repo: https://github.com/DevinCastro/BluesIt
 
 ## Description:
 This application is a music oriented social media platform.  While most social platforms are littered with advertising, specific display algorithms, and sell your data, **BluesIt** provides a clean and intuitive interface for musicians and music lovers to share their thoughts and interests with each other.  Log in and start checking out some of the threads that might interest you, and then post and share your thoughts!  When you see a post you're interested in, give it a like and or comment on that thread and share your thoughts with the user who made that post!
