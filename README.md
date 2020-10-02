@@ -3,11 +3,11 @@
     title="BluesIt" width="150" height="150" />
 </div>
 
->## **Group project by:**
->Devin Castro
->Danielle Hillman
->Brian Ratunil
->Kenny Yang
+> ## **Group project by:**
+> Devin Castro
+> Danielle Hillman
+> Brian Ratunil
+> Kenny Yang
 
 This application is deployed at: https://desolate-sands-65866.herokuapp.com/
 GitHub Repo: https://github.com/DevinCastro/BluesIt
