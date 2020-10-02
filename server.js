@@ -24,11 +24,7 @@ app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 
 
-if (process.env.NODE_ENV === 'production') {
-  app.get('/*', (req, res) => {
-    res.sendFile(join(__dirname, 'client', 'build', 'index.html'))
-  })
-}
+
 
 
 
@@ -50,6 +46,13 @@ passport.use(new JWTStrategy({
 
 
 app.use(require('./routes'))
+
+
+if (process.env.NODE_ENV === 'production') {
+  app.get('/*', (req, res) => {
+    res.sendFile(join(__dirname, 'client', 'build', 'index.html'))
+  })
+}
 
 
 require('./db')
