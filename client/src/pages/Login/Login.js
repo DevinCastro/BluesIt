@@ -93,7 +93,6 @@ const Login = () => {
               <p className="text-center">
                 <Button className="grad"
                 >Submit</Button>
-                <p><img className="guitarpic" src={guitar} /></p>
                 <ToastContainer />
               </p>
             </Form>
@@ -118,12 +117,15 @@ const Login = () => {
               <p className="text-center">
                 <Button className="grad" onClick={registerState.handleLogin}>Login</Button>
               </p>
-              <p><img className="guitarpic" src={guitar2} /></p>
+              {/* <p><img className="guitarpic" src={guitar2} /></p> */}
             </Form>
 
           </Col>
           <iframe className="hide" name='hidden-frame'></iframe>
         </Row>
+        <div className="guitarpic rounded mx-auto d-block">
+        </div>
+        {/* <p><img className="guitarpic rounded mx-auto d-block" src={guitar} /></p> */}
       </Container>
     </>
   )

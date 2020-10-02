@@ -157,8 +157,8 @@ const Home = () => {
         <div>
           <Row className="nav">
             <Col xs="12">
-              <Row className="text-center">
-                <Col xs="4">
+              <Row id="rows" className="text-center">
+                <Col md="4">
                   <Dropdown isOpen={dropdownOpen} toggle={toggle}>
                     <DropdownToggle caret className='grad'>
                       Sort By
@@ -170,7 +170,7 @@ const Home = () => {
                     </DropdownMenu>
                   </Dropdown>
                 </Col>
-                <Col xs="4">
+                <Col md="4">
                   <div>
                     {localStorage.getItem('user') ?
                       <Button id="postButton" onClick={toggle2}>Make a Post</Button>

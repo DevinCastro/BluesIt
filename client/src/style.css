@@ -66,8 +66,12 @@ body {
 }
 
 .guitarpic {
-  width: 100%;
-  height: auto;
+  width: 400px;
+  height: 250px;
+  background-blend-mode: screen;
+  background-image: url('./pages/Login/guitar.png');
+  background-color: #100E17;
+  background-size: cover;
 }
 
 .card-body {
@@ -102,4 +106,42 @@ a>#loginSignup::before, #home::before {
 a>#loginSignup:hover::before, #home:hover::before {
   visibility: visible;
   transform: scaleX(1);
+}
+
+.App {
+  text-align: center;
+  height: 200px;
+}
+
+.scrollTop {
+  position: fixed;
+  width: 100%;
+  bottom: 20px;
+  align-items: center;
+  height: 20px;
+  justify-content: center;
+  z-index: 1000;
+  cursor: pointer;
+  animation: fadeIn 0.3s;
+  transition: opacity 0.4s;
+  opacity: 0.5;
+}
+
+.scrollTop:hover {
+  opacity: 1;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  #rows {
+    justify-content: center;
+  }
 }
