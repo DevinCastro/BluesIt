@@ -4,10 +4,10 @@
 </div>
 
 > ## **Group project by:**
-> Devin Castro
-> Danielle Hillman
-> Brian Ratunil
-> Kenny Yang
+>* Devin Castro
+>* Danielle Hillman
+>* Brian Ratunil
+>* Kenny Yang
 
 This application is deployed at: https://desolate-sands-65866.herokuapp.com/
 GitHub Repo: https://github.com/DevinCastro/BluesIt
